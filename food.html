@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>รวมเมนูอาหารเด็ดเมืองสุรินทร์ - แนะนำและรีวิวความอร่อย</title>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+  :root { 
+    --gold: #f59e0b; 
+    --gold-light: #fde047;
+    --gold-glow: 0 0 30px rgba(253, 224, 71, 0.8), 0 0 60px rgba(245, 158, 11, 0.6);
+    --bg-dark: #030508; 
+    --card-bg: rgba(13, 19, 33, 0.85);
+    --card-border: rgba(245, 158, 11, 0.6);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --cute-pink: #ff3366;
+    --neon-blue: #00f0ff;
+  }
+  
+  * { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body { 
+    font-family: 'Prompt', sans-serif; 
+    background-color: var(--bg-dark); 
+    color: var(--text-main); 
+    margin: 0; 
+    line-height: 1.8; 
+    overflow-x: hidden;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(245, 158, 11, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(255, 51, 102, 0.06) 0%, transparent 40%),
+      linear-gradient(rgba(3, 5, 8, 0.9), rgba(3, 5, 8, 0.95)),
+      url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1800&q=80');
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  /* Ultra Luxury Holographic Hero Section */
+  .hero { 
+    height: 75vh; 
+    background: linear-gradient(180deg, rgba(3,5,8,0.4) 0%, rgba(3,5,8,0.95) 100%), 
+                url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    border-bottom: 4px solid;
+    border-image: linear-gradient(90deg, transparent, var(--gold-light), var(--gold), var(--gold-light), transparent) 1;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9);
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+    animation: pulseGlow 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulseGlow {
+    0% { opacity: 0.4; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1.05); }
+  }
+
+  .hero-content {
+    max-width: 900px;
+    position: relative;
+    z-index: 2;
+    animation: heroEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes heroEntrance {
+    from { opacity: 0; transform: translateY(40px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .hero h1 { 
+    font-size: 4.2rem; 
+    margin: 0 0 20px 0; 
+    font-weight: 900; 
+    background: linear-gradient(135deg, #fff 20%, var(--gold-light) 50%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 35px rgba(245, 158, 11, 0.6));
+    letter-spacing: 1px;
+    animation: titleFloat 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes titleFloat {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-8px) rotate(0.5deg); }
+  }
+
+  .hero p { 
+    font-size: 1.35rem; 
+    color: var(--text-muted); 
+    font-weight: 400; 
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+    letter-spacing: 0.5px;
+  }
+
+  /* Cyberpunk Glassmorphism Navbar */
+  .navbar {
+    background: rgba(7, 11, 20, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 18px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(245, 158, 11, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  }
+  .navbar a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    padding: 5px 0;
+  }
+  .navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--gold-light), var(--gold));
+    box-shadow: var(--gold-glow);
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .navbar a:hover {
+    color: var(--gold-light);
+    transform: translateY(-2px);
+    text-shadow: 0 0 12px rgba(253, 224, 71, 0.6);
+  }
+  .navbar a:hover::after { width: 100%; }
+  .navbar a i { color: var(--gold); transition: transform 0.4s ease; filter: drop-shadow(0 0 8px var(--gold)); }
+  .navbar a:hover i { transform: rotate(20deg) scale(1.3); color: var(--gold-light); }
+
+  /* Main Container */
+  .container { max-width: 1050px; margin: 90px auto; padding: 0 20px; }
+  
+  .section-heading {
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 70px;
+    background: linear-gradient(135deg, #fff 30%, var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 25px rgba(245, 158, 11, 0.5));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    cursor: default;
+  }
+  .section-heading i {
+    animation: iconBounce 2.5s ease-in-out infinite;
+    color: var(--gold-light);
+    -webkit-text-fill-color: initial;
+    filter: drop-shadow(0 0 15px var(--gold));
+  }
+  @keyframes iconBounce {
+    0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+    50% { transform: translateY(-10px) scale(1.2) rotate(-5deg); }
+  }
+
+  /* Ultra-Premium Cinematic Food Card with Scroll Animation */
+  .food-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--card-border);
+    border-radius: 35px;
+    margin-bottom: 90px;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8), inset 0 0 30px rgba(255,255,255,0.02);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    
+    /* สไตล์เริ่มต้นก่อนเลื่อนขึ้นมาแสดงผล */
+    opacity: 0;
+    transform: translateY(60px);
+    visibility: hidden;
+    will-change: opacity, transform;
+  }
+
+  /* สไตล์เมื่อการ์ดเลื่อนเข้ามาในหน้าจอแล้ว */
+  .food-card.reveal {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .food-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 35px;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, var(--gold), transparent, var(--cute-pink)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  .food-card:hover { 
+    box-shadow: 0 40px 90px rgba(0,0,0,0.95), 0 0 50px rgba(245, 158, 11, 0.35);
+    transform: translateY(-12px) scale(1.01);
+  }
+  
+  .food-card:hover::before { opacity: 1; }
+
+  /* Holographic Floating Badge */
+  .food-badge {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: rgba(3, 5, 8, 0.8);
+    backdrop-filter: blur(15px);
+    color: var(--gold-light);
+    padding: 10px 22px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: 30px;
+    border: 1px solid rgba(245, 158, 11, 0.6);
+    z-index: 10;
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .food-card:hover .food-badge { 
+    transform: scale(1.1) translateY(-4px); 
+    background: rgba(245, 158, 11, 0.2);
+    border-color: var(--gold-light);
+    box-shadow: 0 0 30px var(--gold-light);
+  }
+
+  .food-img-container {
+    width: 100%;
+    height: 440px;
+    overflow: hidden;
+    background: #0b0f19;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .food-img-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13,19,33,0.9) 0%, transparent 50%);
+    z-index: 2;
+    opacity: 0.7;
+    transition: opacity 0.4s;
+  }
+
+  .food-img-container::after {
+    content: '\f00e';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    background: rgba(253, 224, 71, 0.2);
+    backdrop-filter: blur(15px);
+    color: var(--gold-light);
+    padding: 16px;
+    border-radius: 18px;
+    font-size: 1.4rem;
+    opacity: 0;
+    z-index: 3;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.6);
+    border: 1px solid rgba(245, 158, 11, 0.5);
+  }
+  
+  .food-img-container:hover::before { opacity: 0.3; }
+  .food-img-container:hover::after { opacity: 1; transform: scale(1.15) rotate(10deg); }
+  
+  .food-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+    display: block;
+  }
+  .food-card:hover .food-img { transform: scale(1.12); }
+
+  .food-body { padding: 45px 45px 25px 45px; position: relative; z-index: 3; }
+  
+  .food-title { 
+    color: white; 
+    font-size: 2.6rem; 
+    margin-top: 0; 
+    margin-bottom: 20px; 
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 40%, var(--gold-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(255,255,255,0.4));
+    transition: all 0.4s;
+  }
+  .food-card:hover .food-title { filter: drop-shadow(0 0 25px rgba(253, 224, 71, 0.7)); }
+  
+  .food-desc { color: #cbd5e1; font-size: 1.15rem; margin-bottom: 30px; line-height: 2.1; }
+  
+  .food-recommendation {
+    background: rgba(245, 158, 11, 0.06);
+    border-left: 4px solid var(--gold);
+    padding: 18px 28px;
+    border-radius: 18px;
+    font-size: 1.05rem;
+    color: #f1f5f9;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    box-shadow: inset 0 0 20px rgba(255,255,255,0.02);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .food-recommendation:hover {
+    background: rgba(245, 158, 11, 0.12);
+    transform: translateX(8px);
+    border-color: var(--gold-light);
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
+  }
+  .food-recommendation strong { color: var(--gold-light); text-shadow: 0 0 10px var(--gold-light); }
+
+  /* Cyber Interaction Bar */
+  .interaction-bar {
+    display: flex;
+    justify-content: space-around;
+    padding: 22px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(3, 5, 8, 0.75);
+    backdrop-filter: blur(15px);
+  }
+  
+  .action-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #cbd5e1;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 14px 26px;
+    border-radius: 35px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+  
+  .action-btn:hover { 
+    background: rgba(245, 158, 11, 0.18); 
+    color: var(--gold-light);
+    border-color: rgba(245, 158, 11, 0.6);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
+  }
+  
+  .action-btn.liked { 
+    color: var(--cute-pink); 
+    border-color: rgba(255, 51, 102, 0.6);
+    background: rgba(255, 51, 102, 0.12);
+    text-shadow: 0 0 15px var(--cute-pink); 
+    box-shadow: 0 0 30px rgba(255, 51, 102, 0.3);
+  }
+  .action-btn.liked i { animation: heartPulse 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
+  @keyframes heartPulse {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.6); }
+    50% { transform: scale(0.85); }
+    70% { transform: scale(1.4); }
+    100% { transform: scale(1); }
+  }
+
+  /* Comments Section */
+  .comments-section {
+    padding: 30px 45px;
+    background: rgba(2, 4, 7, 0.85);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  
+  .comments-title {
+    font-size: 1.15rem;
+    color: var(--gold-light);
+    margin-top: 0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-shadow: 0 0 12px var(--gold-light);
+  }
+  
+  .comment-list {
+    margin-bottom: 25px;
+    max-height: 220px;
+    overflow-y: auto;
+    padding-right: 8px;
+  }
+  
+  .comment-list::-webkit-scrollbar { width: 6px; }
+  .comment-list::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); border-radius: 10px; }
+  .comment-list::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--gold-light), var(--gold)); border-radius: 10px; box-shadow: var(--gold-glow); }
+
+  .comment-item {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 14px 20px;
+    border-radius: 18px;
+    margin-bottom: 14px;
+    font-size: 0.98rem;
+    border-left: 3px solid var(--gold);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    animation: commentSlide 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: all 0.3s ease;
+  }
+  
+  .comment-item:hover {
+    transform: translateX(6px);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(245, 158, 11, 0.4);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+  }
+  
+  @keyframes commentSlide {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .comment-item strong { color: var(--gold-light); margin-right: 10px; text-shadow: 0 0 8px var(--gold-light); }
+
+  .comment-form { display: flex; gap: 15px; }
+  
+  .comment-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1.5px solid rgba(245, 158, 11, 0.3);
+    padding: 14px 24px;
+    border-radius: 35px;
+    color: #fff;
+    font-family: 'Prompt', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  
+  .comment-input:focus { 
+    border-color: var(--gold-light); 
+    background: rgba(255, 255, 255, 0.08); 
+    box-shadow: 0 0 30px var(--gold-glow); 
+  }
+  
+  .send-btn {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold), #d97706);
+    color: #030508;
+    border: none;
+    padding: 0 30px;
+    border-radius: 35px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.5);
+  }
+  
+  .send-btn:hover { 
+    background: #fff; 
+    color: #030508;
+    transform: scale(1.12) rotate(2deg); 
+    box-shadow: 0 0 45px var(--gold-light); 
+  }
+
+  /* Cinematic Lightbox Modal */
+  .lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(3, 5, 8, 0.96);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(20px);
+    animation: fadeInModal 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  
+  @keyframes fadeInModal { from { opacity: 0; } to { opacity: 1; } }
+  
+  .lightbox-content {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 25px;
+    box-shadow: 0 0 80px rgba(245, 158, 11, 0.6), 0 0 120px rgba(255, 51, 102, 0.3);
+    border: 2.5px solid var(--gold-light);
+    animation: scaleUpModal 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  @keyframes scaleUpModal { from { transform: scale(0.75) rotate(-3deg); } to { transform: scale(1) rotate(0deg); } }
+  
+  .lightbox-close {
+    position: absolute;
+    top: 35px; right: 45px;
+    color: #fff; font-size: 3rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-shadow: 0 0 20px #fff, 0 0 40px var(--cute-pink);
+  }
+  
+  .lightbox-close:hover { color: var(--cute-pink); transform: rotate(90deg) scale(1.3); }
+
+  /* Holographic Toast Notification */
+  .toast {
+    visibility: hidden;
+    position: fixed;
+    bottom: 30px; left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: #030508;
+    padding: 16px 32px;
+    border-radius: 40px;
+    font-weight: 800;
+    z-index: 1000;
+    box-shadow: 0 0 40px var(--gold-glow);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+  }
+  .toast.show { visibility: visible; opacity: 1; bottom: 45px; transform: translateX(-50%) scale(1); }
+
+  /* Ultra Luxury Footer */
+  .footer-container {
+    background: radial-gradient(circle at center, #0a1120 0%, #030508 100%);
+    padding: 90px 20px 50px 20px;
+    color: white;
+    text-align: center;
+    border-top: 4px solid;
+    border-image: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent) 1;
+    margin-top: 120px;
+    box-shadow: 0 -30px 60px rgba(245, 158, 11, 0.15);
+  }
+  
+  .footer-title { 
+    font-size: 2.8rem; 
+    font-weight: 900; 
+    background: linear-gradient(135deg, #fff 30%, var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px; 
+    filter: drop-shadow(0 0 20px var(--gold-light));
+  }
+  
+  .footer-subtitle { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 50px; }
+  
+  .contact-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 1000px; margin: 0 auto 50px auto; }
+  
+  .contact-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1.5px solid rgba(245, 158, 11, 0.4);
+    color: white;
+    padding: 18px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  }
+  
+  .contact-btn:hover { 
+    background: linear-gradient(135deg, var(--gold-light), var(--gold)); 
+    color: #030508; 
+    border-color: #fff; 
+    transform: translateY(-8px) scale(1.06); 
+    box-shadow: 0 0 45px var(--gold-light), 0 15px 35px rgba(245, 158, 11, 0.5); 
+  }
+  
+  .contact-btn i { font-size: 1.5rem; color: var(--gold); transition: transform 0.4s ease; filter: drop-shadow(0 0 8px var(--gold)); }
+  .contact-btn:hover i { color: #030508; transform: scale(1.3) rotate(15deg); }
+  
+  .footer-copy { font-size: 0.98rem; color: #64748b; margin: 0; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 35px; }
+
+  /* Responsive Design */
+  @media (max-width: 900px) {
+    .hero h1 { font-size: 2.8rem; }
+    .section-heading { font-size: 2.3rem; }
+    .food-title { font-size: 2.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-content">
+    <h1>✨ เมนูอาหารเด็ดเมืองสุรินทร์ ✨</h1>
+    <p>จัดเต็มความอร่อยกับเมนูและของดีเมืองช้าง พร้อมพื้นที่ให้คุณร่วมรีวิวและแสดงความคิดเห็น</p>
+  </div>
+</header>
+
+<nav class="navbar">
+  <a href="webste.html"><i class="fas fa-home"></i> หน้าแรก</a>
+  <a href="teepak.html"><i class="fas fa-bed"></i> ที่พัก</a>
+  <a href="food.html"><i class="fas fa-utensils"></i> อาหาร</a>
+  <a href="travel.html"><i class="fas fa-map-marked-alt"></i> สถานที่ท่องเที่ยว</a>
+  <a href="contact-1.html"><i class="fas fa-address-book"></i> ติดต่อเรา</a>
+</nav>
+
+<div class="container">
+  <h2 class="section-heading"><i class="fas fa-utensils"></i> เมนูแนะนำและของอร่อยเมืองสุรินทร์</h2>
+
+  <!-- 1. ข้าวตอกตั้ง -->
+  <article class="food-card" id="food-1">
+    <div class="food-badge">🎁 ของฝากขึ้นชื่อ</div>
+    <div class="food-img-container" onclick="openLightbox(this)">
+      <img src="d:\อรปรียา นาคำสี\images (16).jpg" alt="ข้าวตอกตั้ง" class="food-img">
+    </div>
+    <div class="food-body">
+      <h2 class="food-title">ข้าวตอกตั้งโบราณ</h2>
+      <p class="food-desc">ขนมไทยโบราณอันเป็นเอกลักษณ์ของจังหวัดสุรินทร์ ทำจากข้าวตอกคั่วหอมกรุ่น นำมาเคี่ยวกับน้ำตาลโตนดหรือน้ำตาลมะพร้าวแท้จนเหนียวได้ที่ หวานมันกรุบกรอบกำลังดี</p>
+      <div class="food-recommendation">
+        <strong>💡 คำแนะนำจากกูรู:</strong> ทานคู่กับชาหรือกาแฟร้อนๆ ในยามเช้า หรือซื้อเป็นของฝากถูกใจผู้รับแน่นอน
+      </div>
+    </div>
+    <div class="interaction-bar">
+      <button class="action-btn" onclick="toggleLike(this, 'like-count-1')"><i class="far fa-heart"></i> ถูกใจ (<span id="like-count-1">154</span>)</button>
+      <button class="action-btn" onclick="focusComment('comment-input-1')"><i class="far fa-comment"></i> คอมเมนต์รีวิว</button>
+      <button class="action-btn" onclick="sharePost()"><i class="far fa-share-square"></i> แชร์เมนูนี้</button>
+    </div>
+    <div class="comments-section">
+      <h4 class="comments-title"><i class="fas fa-comments"></i> ความคิดเห็น & รีวิว</h4>
+      <div class="comment-list" id="comment-list-1">
+        <div class="comment-item"><strong>💖 พี่ปook พาชิม:</strong> อร่อยมากกก หวานกำลังดี ไม่เลี่ยนเลยค่ะ</div>
+      </div>
+      <div class="comment-form">
+        <input type="text" class="comment-input" id="comment-input-1" placeholder="พิมพ์รีวิวของคุณที่นี่...">
+        <button class="send-btn" onclick="addComment(1)">ส่งรีวิว</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- 2. แกงอ่อม & ลาบอีสาน -->
+  <article class="food-card" id="food-2">
+    <div class="food-badge">🔥 อาหารพื้นบ้านรสแซ่บ</div>
+    <div class="food-img-container" onclick="openLightbox(this)">
+      <img src="d:\อรปรียา นาคำสี\images (17).jpg" alt="แกงอ่อม ลาบ" class="food-img">
+    </div>
+    <div class="food-body">
+      <h2 class="food-title">แกงอ่อม & ลาบอีสานรสเด็ด</h2>
+      <p class="food-desc">อาหารพื้นถิ่นอีสานใต้ที่จัดจ้านถึงเครื่องสมุนไพรพื้นบ้าน อุดมไปด้วยกลิ่นหอมของผักชีลาว ตะไคร้ และข้าวคั่วใหม่ๆ รสชาติเข้มข้นสะใจคนรักอาหารอีสานแท้ๆ</p>
+      <div class="food-recommendation">
+        <strong>💡 คำแนะนำจากกูรู:</strong> แนะนำให้สั่งทานคู่กับข้าวเหนียวร้อนๆ และผักสดพื้นบ้าน รับรองว่าติดใจ
+      </div>
+    </div>
+    <div class="interaction-bar">
+      <button class="action-btn" onclick="toggleLike(this, 'like-count-2')"><i class="far fa-heart"></i> ถูกใจ (<span id="like-count-2">289</span>)</button>
+      <button class="action-btn" onclick="focusComment('comment-input-2')"><i class="far fa-comment"></i> คอมเมนต์รีวิว</button>
+      <button class="action-btn" onclick="sharePost()"><i class="far fa-share-square"></i> แชร์เมนูนี้</button>
+    </div>
+    <div class="comments-section">
+      <h4 class="comments-title"><i class="fas fa-comments"></i> ความคิดเห็น & รีวิว</h4>
+      <div class="comment-list" id="comment-list-2">
+        <div class="comment-item"><strong>🔥 แบงค์ สายแซ่บ:</strong> น้ำซุปอ่อมร้อนๆ คือที่สุด หอมสมุนไพรมาก!</div>
+      </div>
+      <div class="comment-form">
+        <input type="text" class="comment-input" id="comment-input-2" placeholder="พิมพ์รีวิวของคุณที่นี่...">
+        <button class="send-btn" onclick="addComment(2)">ส่งรีวิว</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- 3. ข้าวหอมมะลิทุ่งกุลา -->
+  <article class="food-card" id="food-3">
+    <div class="food-badge">✨ วัตถุดิบระดับโลก</div>
+    <div class="food-img-container" onclick="openLightbox(this)">
+      <img src="d:\อรปรียา นาคำสี\images (6).jpg" alt="ข้าวหอมมะลิ" class="food-img">
+    </div>
+    <div class="food-body">
+      <h2 class="food-title">ข้าวหอมมะลิทุ่งกุลาร้องไห้</h2>
+      <p class="food-desc">สุดยอดข้าวหอมมะลิอินทรีย์ที่มีชื่อเสียงก้องโลก ด้วยสภาพดินในทุ่งกุลาที่มีแร่ธาตุและความเค็มตามธรรมชาติ ทำให้ข้าวที่ปลูกออกมามีความหอม นุ่มเหนียว และเมล็ดเรียวยาวสวยงาม</p>
+      <div class="food-recommendation">
+        <strong>💡 คำแนะนำจากกูรู:</strong> ทานคู่กับกับข้าวอะไรก็อร่อย เพราะตัวข้าวมีความหอมหวานตามธรรมชาติ
+      </div>
+    </div>
+    <div class="interaction-bar">
+      <button class="action-btn" onclick="toggleLike(this, 'like-count-3')"><i class="far fa-heart"></i> ถูกใจ (<span id="like-count-3">412</span>)</button>
+      <button class="action-btn" onclick="focusComment('comment-input-3')"><i class="far fa-comment"></i> คอมเมนต์รีวิว</button>
+      <button class="action-btn" onclick="sharePost()"><i class="far fa-share-square"></i> แชร์เมนูนี้</button>
+    </div>
+    <div class="comments-section">
+      <h4 class="comments-title"><i class="fas fa-comments"></i> ความคิดเห็น & รีวิว</h4>
+      <div class="comment-list" id="comment-list-3">
+        <div class="comment-item"><strong>🌾 แม่บ้านยุคใหม่:</strong> หุงแล้วหอมฟุ้งไปทั้งบ้าน กินกับไข่เจียวธรรมดายังอร่อยเลยค่ะ</div>
+      </div>
+      <div class="comment-form">
+        <input type="text" class="comment-input" id="comment-input-3" placeholder="พิมพ์รีวิวของคุณที่นี่...">
+        <button class="send-btn" onclick="addComment(3)">ส่งรีวิว</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- 4. กุนเชียงและหมูยอสุรินทร์ -->
+  <article class="food-card" id="food-4">
+    <div class="food-badge">🥓 ของฝากยอดฮิต</div>
+    <div class="food-img-container" onclick="openLightbox(this)">
+      <img src="d:\อรปรียา นาคำสี\images (18).jpg" alt="หมูยอและอาหารแปรรูป" class="food-img">
+    </div>
+    <div class="food-body">
+      <h2 class="food-title">กุนเชียงและหมูยอสุรินทร์</h2>
+      <p class="food-desc">ผลิตภัณฑ์แปรรูปจากเนื้อหมูคุณภาพดี ปรุงรสอย่างกลมกล่อมตามสูตรดั้งเดิม เนื้อแน่น มันน้อย หอมเครื่องเทศ ทอดหรือนึ่งทานกับข้าวต้มร้อนๆ ก็ฟินไม่แพ้กัน</p>
+      <div class="food-recommendation">
+        <strong>💡 คำแนะนำจากกูรู:</strong> เหมาะสำหรับซื้อตุนไว้ติดบ้าน หรือเป็นของฝากญาติผู้ใหญ่ในช่วงเทศกาล
+      </div>
+    </div>
+    <div class="interaction-bar">
+      <button class="action-btn" onclick="toggleLike(this, 'like-count-4')"><i class="far fa-heart"></i> ถูกใจ (<span id="like-count-4">198</span>)</button>
+      <button class="action-btn" onclick="focusComment('comment-input-4')"><i class="far fa-comment"></i> คอมเมนต์รีวิว</button>
+      <button class="action-btn" onclick="sharePost()"><i class="far fa-share-square"></i> แชร์เมนูนี้</button>
+    </div>
+    <div class="comments-section">
+      <h4 class="comments-title"><i class="fas fa-comments"></i> ความคิดเห็น & รีวิว</h4>
+      <div class="comment-list" id="comment-list-4">
+        <div class="comment-item"><strong>🥓 กofฟี่:</strong> กุนเชียงไม่มันเลี่ยน ทอดแล้วหอมมากครับ</div>
+      </div>
+      <div class="comment-form">
+        <input type="text" class="comment-input" id="comment-input-4" placeholder="พิมพ์รีวิวของคุณที่นี่...">
+        <button class="send-btn" onclick="addComment(4)">ส่งรีวิว</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- 5. ส้มตำปูปลาร้าสุรินทร์ -->
+  <article class="food-card" id="food-5">
+    <div class="food-badge">🌶️ สตรีทฟู้ดสุดแซ่บ</div>
+    <div class="food-img-container" onclick="openLightbox(this)">
+      <img src="d:\อรปรียา นาคำสี\ดาวน์โหลด.jpg" alt="ส้มตำแซ่บ" class="food-img">
+    </div>
+    <div class="food-body">
+      <h2 class="food-title">ส้มตำปูปลาร้า & ตำโคราช</h2>
+      <p class="food-desc">เมนูยอดฮิตริมทางที่หาทานได้ทั่วเมืองสุรินทร์ รสชาติจัดจ้านนัวด้วยน้ำปลาร้าต้มสุกสูตรเด็ดครบรส ทั้งเผ็ด เค็ม เปรี้ยว หวาน กลมกล่อมลงตัว</p>
+      <div class="food-recommendation">
+        <strong>💡 คำแนะนำจากกูรู:</strong> ทานคู่กับขนมจีนและแคบหมู รับรองว่าจานเดียวไม่เคยพอ
+      </div>
+    </div>
+    <div class="interaction-bar">
+      <button class="action-btn" onclick="toggleLike(this, 'like-count-5')"><i class="far fa-heart"></i> ถูกใจ (<span id="like-count-5">345</span>)</button>
+      <button class="action-btn" onclick="focusComment('comment-input-5')"><i class="far fa-comment"></i> คอมเมนต์รีวิว</button>
+      <button class="action-btn" onclick="sharePost()"><i class="far fa-share-square"></i> แชร์เมนูนี้</button>
+    </div>
+    <div class="comments-section">
+      <h4 class="comments-title"><i class="fas fa-comments"></i> ความคิดเห็น & รีวิว</h4>
+      <div class="comment-list" id="comment-list-5">
+        <div class="comment-item"><strong>🌶️ น시น:</strong> ปลาร้านัวมากกก ใครผ่านมาต้องแวะกินแถวตลาดโต้รุ่งนะ</div>
+      </div>
+      <div class="comment-form">
+        <input type="text" class="comment-input" id="comment-input-5" placeholder="พิมพ์รีวิวของคุณที่นี่...">
+        <button class="send-btn" onclick="addComment(5)">ส่งรีวิว</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- 6. ไก่ย่างสมุนไพร -->
+  <article class="food-card" id="food-6">
+    <div class="food-badge">🍗 ของย่างหอมๆ</div>
+    <div class="food-img-container" onclick="openLightbox(this)">
+      <img src="d:\อรปรียา นาคำสี\images (12).jpg" alt="ไก่ย่าง" class="food-img">
+    </div>
+    <div class="food-body">
+      <h2 class="food-title">ไก่ย่างสมุนไพรพื้นบ้าน</h2>
+      <p class="food-desc">ไก่บ้านเนื้อแน่นหมักด้วยเครื่องสมุนไพรไทย ทั้งตะไคร้ กระเทียม รากผักชี และพริกไทย ย่างบนเตาถ่านร้อนๆ จนหนังกรอบเหลืองสวย เนื้อนุ่มชุ่มฉ่ำ</p>
+      <div class="food-recommendation">
+        <strong>💡 คำแนะนำจากกูรู:</strong> จิ้มกับน้ำจิ้มแจ่วรสเด็ด หรือน้ำจิ้มมะขามเปียกสูตรโบราณ เข้ากันได้ดีเยี่ยม
+      </div>
+    </div>
+    <div class="interaction-bar">
+      <button class="action-btn" onclick="toggleLike(this, 'like-count-6')"><i class="far fa-heart"></i> ถูกใจ (<span id="like-count-6">276</span>)</button>
+      <button class="action-btn" onclick="focusComment('comment-input-6')"><i class="far fa-comment"></i> คอมเมนต์รีวิว</button>
+      <button class="action-btn" onclick="sharePost()"><i class="far fa-share-square"></i> แชร์เมนูนี้</button>
+    </div>
+    <div class="comments-section">
+      <h4 class="comments-title"><i class="fas fa-comments"></i> ความคิดเห็น & รีวิว</h4>
+      <div class="comment-list" id="comment-list-6">
+        <div class="comment-item"><strong>🍗 บอย ท่องเที่ยว:</strong> กลิ่นหอมเตะจมูกตั้งแต่เดินเข้าร้านเลยครับ</div>
+      </div>
+      <div class="comment-form">
+        <input type="text" class="comment-input" id="comment-input-6" placeholder="พิมพ์รีวิวของคุณที่นี่...">
+        <button class="send-btn" onclick="addComment(6)">ส่งรีวิว</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- 7. ต้มแซ่บกระดูกอ่อน -->
+  <article class="food-card" id="food-7">
+    <div class="food-badge">🍲 ซดน้ำซุปร้อนๆ</div>
+    <div class="food-img-container" onclick="openLightbox(this)">
+      <img src="d:\อรปรียา นาคำสี\images (20).jpg" alt="ต้มแซ่บ" class="food-img">
+    </div>
+    <div class="food-body">
+      <h2 class="food-title">ต้มแซ่บกระดูกอ่อนหมู</h2>
+      <p class="food-desc">กระดูกอ่อนเคี่ยวจนนุ่มกรุบกรับในน้ำซุปต้มยำรสแซ่บจัดจ้าน หอมกลิ่นมะนาวแท้ พริกสด และใบโหระพา ซดร้อนๆ คล่องคอ ชื่นใจ</p>
+      <div class="food-recommendation">
+        <strong>💡 คำแนะนำจากกูรู:</strong> เมนูแก้เลี่ยนและเรียกความสดชื่นได้ดีเยี่ยม ทานกับข้าวสวยร้อนๆ เข้ากันที่สุด
+      </div>
+    </div>
+    <div class="interaction-bar">
+      <button class="action-btn" onclick="toggleLike(this, 'like-count-7')"><i class="far fa-heart"></i> ถูกใจ (<span id="like-count-7">310</span>)</button>
+      <button class="action-btn" onclick="focusComment('comment-input-7')"><i class="far fa-comment"></i> คอมเมนต์รีวิว</button>
+      <button class="action-btn" onclick="sharePost()"><i class="far fa-share-square"></i> แชร์เมนูนี้</button>
+    </div>
+    <div class="comments-section">
+      <h4 class="comments-title"><i class="fas fa-comments"></i> ความคิดเห็น & รีวิว</h4>
+      <div class="comment-list" id="comment-list-7">
+        <div class="comment-item"><strong>🍲 เจ๊จิ๋ม คนสุรินทร์:</strong> กระดูกอ่อนเปื่อยกำลังดี เผ็ดเปรี้ยวถึงใจมากจ้า</div>
+      </div>
+      <div class="comment-form">
+        <input type="text" class="comment-input" id="comment-input-7" placeholder="พิมพ์รีวิวของคุณที่นี่...">
+        <button class="send-btn" onclick="addComment(7)">ส่งรีวิว</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- 8. ขนมจีนน้ำยาป่าสูตรโบราณ -->
+  <article class="food-card" id="food-8">
+    <div class="food-badge">🍜 เมนูเส้นพื้นบ้าน</div>
+    <div class="food-img-container" onclick="openLightbox(this)">
+      <img src="d:\อรปรียา นาคำสี\images (22).jpg" alt="ขนมจีนน้ำยา" class="food-img">
+    </div>
+    <div class="food-body">
+      <h2 class="food-title">ขนมจีนน้ำยาป่าสูตรโบราณ</h2>
+      <p class="food-desc">เส้นขนมจีนเหนียวนุ่มราดด้วยน้ำยาป่าเข้มข้น หอมพริกแกงและเนื้อปลาโขลกละเอียด ใส่ลูกชิ้นและตีนไก่เปื่อยๆ ทานแกล้มกับผักสดพื้นบ้านหลากหลายชนิด</p>
+      <div class="food-recommendation">
+        <strong>💡 คำแนะนำจากกูรู:</strong> ใส่ยอดกระถินและใบแมงลักเยอะๆ จะช่วยชูรสชาติให้อร่อยยิ่งขึ้น
+      </div>
+    </div>
+    <div class="interaction-bar">
+      <button class="action-btn" onclick="toggleLike(this, 'like-count-8')"><i class="far fa-heart"></i> ถูกใจ (<span id="like-count-8">234</span>)</button>
+      <button class="action-btn" onclick="focusComment('comment-input-8')"><i class="far fa-comment"></i> คอมเมนต์รีวิว</button>
+      <button class="action-btn" onclick="sharePost()"><i class="far fa-share-square"></i> แชร์เมนูนี้</button>
+    </div>
+    <div class="comments-section">
+      <h4 class="comments-title"><i class="fas fa-comments"></i> ความคิดเห็น & รีวิว</h4>
+      <div class="comment-list" id="comment-list-8">
+        <div class="comment-item"><strong>🍜 เอ็ม สายเส้น:</strong> น้ำยาป่าเผ็ดสะใจ ตีนไก่เปื่อยละลายในปากเลย</div>
+      </div>
+      <div class="comment-form">
+        <input type="text" class="comment-input" id="comment-input-8" placeholder="พิมพ์รีวิวของคุณที่นี่...">
+        <button class="send-btn" onclick="addComment(8)">ส่งรีวิว</button>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+<!-- Lightbox Modal -->
+<div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightboxImg">
+</div>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast">🎉 คัดลอกลิงก์แนะนำเมนูเรียบร้อยแล้ว!</div>
+
+<footer class="footer-container">
+  <div class="footer-title">✨ ติดต่อเรา ✨</div>
+  <div class="footer-subtitle">สอบถามข้อมูลเพิ่มเติม หรือปรึกษาแพลนท่องเที่ยวได้ผ่านช่องทางด้านล่าง</div>
+  
+  <div class="contact-grid">
+    <a href="tel:0982059162" class="contact-btn"><i class="fas fa-phone-alt"></i><span>098-205-9162</span></a>
+    <a href="https://www.instagram.com/kwa.exe__" target="_blank" class="contact-btn"><i class="fab fa-instagram"></i><span>kwa.exe__</span></a>
+    <a href="https://www.facebook.com/profile.php?id=YOUR_FB_ID" target="_blank" class="contact-btn"><i class="fab fa-facebook"></i><span>Zee Opy</span></a>
+    <a href="https://line.me/ti/p/~@kumi.ko721" target="_blank" class="contact-btn"><i class="fab fa-line"></i><span>@kumi.ko721</span></a>
+  </div>
+
+  <p class="footer-copy">&copy; 2026 เว็บไซต์ท่องเที่ยวจังหวัดสุรินทร์. All Rights Reserved.</p>
+</footer>
+
+<script>
+  function openLightbox(container) {
+    const img = container.querySelector('img');
+    const modal = document.getElementById('lightboxModal');
+    const modalImg = document.getElementById('lightboxImg');
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightboxModal').style.display = "none";
+  }
+
+  function toggleLike(btn, countId) {
+    const icon = btn.querySelector('i');
+    const countSpan = document.getElementById(countId);
+    let count = parseInt(countSpan.innerText);
+
+    if (btn.classList.contains('liked')) {
+      btn.classList.remove('liked');
+      icon.classList.remove('fas');
+      icon.classList.add('far');
+      countSpan.innerText = count - 1;
+    } else {
+      btn.classList.add('liked');
+      icon.classList.remove('far');
+      icon.classList.add('fas');
+      countSpan.innerText = count + 1;
+    }
+  }
+
+  function focusComment(inputId) {
+    document.getElementById(inputId).focus();
+  }
+
+  function addComment(foodId) {
+    const input = document.getElementById(`comment-input-${foodId}`);
+    const commentText = input.value.trim();
+    if (commentText === "") return;
+
+    const commentList = document.getElementById(`comment-list-${foodId}`);
+    const newComment = document.createElement('div');
+    newComment.className = 'comment-item';
+    newComment.innerHTML = `<strong>✨ นักท่องเที่ยว:</strong> ${escapeHtml(commentText)}`;
+    
+    commentList.appendChild(newComment);
+    commentList.scrollTop = commentList.scrollHeight;
+    input.value = "";
+  }
+
+  function escapeHtml(text) {
+    const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+  }
+
+  function sharePost() {
+    const toast = document.getElementById('toast');
+    toast.className = "toast show";
+    setTimeout(function() {
+      toast.className = "toast";
+    }, 3000);
+  }
+
+  // Intersection Observer สำหรับเอฟเฟกต์ค่อยๆ เลื่อนขึ้นมาแบบละมุนๆ (Smooth Scroll Reveal)
+  document.addEventListener("DOMContentLoaded", function() {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -80px 0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+          observer.unobserve(entry.target); // เล่นอนิเมชันครั้งเดียวเมื่อเลื่อนมาเจอ
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.food-card').forEach(card => {
+      observer.observe(card);
+    });
+  });
+</script>
+
+</body>
+</html>

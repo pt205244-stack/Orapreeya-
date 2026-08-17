@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ติดต่อเรา & ทีมผู้จัดทำ - มหัศจรรย์เมืองสุรินทร์</title>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+  :root {
+    --bg-deep: #000103;
+    --gold-1: #ffedb5;
+    --gold-2: #e6ca65;
+    --gold-3: #b8860b;
+    --gold-gradient: linear-gradient(135deg, #fff5d1 0%, #e6ca65 30%, #c59b27 70%, #ffedb5 100%);
+    --gold-glow: rgba(230, 202, 101, 0.6);
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Prompt', sans-serif;
+    background-color: var(--bg-deep);
+    color: var(--text-main);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px 80px 20px;
+    overflow-x: hidden;
+    position: relative;
+    background-image: 
+      radial-gradient(circle at 10% 10%, rgba(230, 202, 101, 0.22) 0%, transparent 45%),
+      radial-gradient(circle at 90% 90%, rgba(184, 134, 11, 0.22) 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(255, 237, 181, 0.08) 0%, transparent 60%);
+  }
+
+  /* อลังการ Navigation Bar สไตล์หรูหรา */
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: rgba(6, 9, 15, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1.5px solid rgba(230, 202, 101, 0.4);
+    padding: 14px 28px;
+    border-radius: 50px;
+    margin-bottom: 45px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(230, 202, 101, 0.2);
+    position: relative;
+    z-index: 10;
+    flex-wrap: wrap;
+    animation: navbarGlow 4s infinite alternate ease-in-out;
+  }
+
+  @keyframes navbarGlow {
+    0% { border-color: rgba(230, 202, 101, 0.3); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 15px rgba(230, 202, 101, 0.15); }
+    100% { border-color: rgba(230, 202, 101, 0.85); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 35px rgba(230, 202, 101, 0.4); }
+  }
+
+  .navbar a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .navbar a i {
+    font-size: 1.1rem;
+    color: var(--gold-2);
+    transition: transform 0.4s ease;
+  }
+
+  .navbar a:hover, .navbar a.active {
+    color: #000103;
+    background: var(--gold-gradient);
+    font-weight: 700;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--gold-glow);
+  }
+
+  .navbar a:hover i, .navbar a.active i {
+    color: #000103;
+    transform: scale(1.2) rotate(6deg);
+  }
+
+  /* แสงฟุ้งพื้นหลัง (Dreamy Ambient Glows) */
+  .ambient-glow {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(230, 202, 101, 0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(50px);
+    animation: ambientFloat 10s infinite alternate ease-in-out;
+    pointer-events: none;
+  }
+  .glow-1 { top: -100px; left: -100px; }
+  .glow-2 { bottom: -100px; right: -100px; animation-delay: -5s; }
+
+  @keyframes ambientFloat {
+    0% { transform: scale(1) translate(0, 0); opacity: 0.5; }
+    100% { transform: scale(1.3) translate(30px, 30px); opacity: 0.9; }
+  }
+
+  /* ละอองทองคำระยิบระยับ */
+  .particles {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--gold-1);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--gold-1), 0 0 25px #fff, 0 0 35px var(--gold-2);
+    animation: floatParticle 7s infinite linear;
+    opacity: 0;
+  }
+  @keyframes floatParticle {
+    0% { transform: translateY(105vh) translateX(0) scale(0.4); opacity: 0; }
+    20% { opacity: 1; transform: translateY(80vh) translateX(25px) scale(1.3); }
+    80% { opacity: 0.9; transform: translateY(20vh) translateX(-25px) scale(1); }
+    100% { transform: translateY(-10vh) translateX(50px) scale(0.2); opacity: 0; }
+  }
+
+  /* เอฟเฟกต์ค่อยๆ โผล่มาแบบละมุน (Page Load Animation) */
+  .main-container {
+    width: 100%;
+    max-width: 920px;
+    background: rgba(6, 9, 15, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 45px;
+    border: 2px solid rgba(230, 202, 101, 0.5);
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.98), 0 0 70px rgba(230, 202, 101, 0.35);
+    padding: 60px 45px;
+    position: relative;
+    z-index: 1;
+    transform: translateZ(0);
+    
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+    animation: smoothFadeIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards, containerGlow 4s infinite alternate ease-in-out;
+    animation-delay: 0.2s;
+  }
+
+  @keyframes smoothFadeIn {
+    0% { opacity: 0; transform: translateY(30px) scale(0.96); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes containerGlow {
+    0% { border-color: rgba(230, 202, 101, 0.4); box-shadow: 0 50px 100px rgba(0, 0, 0, 0.98), 0 0 40px rgba(230, 202, 101, 0.25); }
+    100% { border-color: rgba(230, 202, 101, 0.95); box-shadow: 0 50px 100px rgba(0, 0, 0, 0.98), 0 0 80px rgba(230, 202, 101, 0.6); }
+  }
+
+  .main-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+    background: var(--gold-gradient);
+    border-radius: 45px 45px 0 0;
+    box-shadow: 0 0 25px var(--gold-1);
+  }
+
+  /* Header Section */
+  .header-section {
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 26px;
+    background: rgba(230, 202, 101, 0.12);
+    border: 1px solid rgba(230, 202, 101, 0.6);
+    border-radius: 50px;
+    color: var(--gold-1);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(230, 202, 101, 0.3);
+  }
+
+  .contact-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin: 0 0 12px 0;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 25px rgba(230, 202, 101, 0.5));
+  }
+
+  .contact-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin: 0 auto;
+    max-width: 580px;
+    font-weight: 300;
+    line-height: 1.6;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  }
+
+  /* Section Headings */
+  .section-heading {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-heading i {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.4rem;
+    filter: drop-shadow(0 0 8px rgba(230, 202, 101, 0.6));
+  }
+
+  /* Creator Card Ultra-Luxury Glow */
+  .creator-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+    border: 1.5px solid rgba(230, 202, 101, 0.4);
+    border-radius: 35px;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(230, 202, 101, 0.05);
+  }
+
+  .creator-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(230, 202, 101, 0.25), transparent);
+    transition: 0.7s;
+  }
+  .creator-card:hover::after { left: 100%; }
+
+  .creator-card:hover {
+    border-color: rgba(230, 202, 101, 1);
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px var(--gold-glow), inset 0 0 30px rgba(230, 202, 101, 0.15);
+  }
+
+  .creator-avatar-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+  }
+
+  .creator-avatar-container::before {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    background: var(--gold-gradient);
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.7;
+    animation: rotateAura 5s linear infinite;
+  }
+  @keyframes rotateAura {
+    0% { filter: hue-rotate(0deg) blur(8px); transform: scale(1); }
+    50% { transform: scale(1.08); filter: hue-rotate(180deg) blur(12px); }
+    100% { filter: hue-rotate(360deg) blur(8px); transform: scale(1); }
+  }
+
+  .creator-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #06090f;
+    box-shadow: 0 0 35px rgba(230, 202, 101, 0.9);
+    background-color: #0e1422;
+  }
+
+  .creator-info h3 {
+    margin: 0 0 6px 0;
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--text-main);
+  }
+
+  .creator-info p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .creator-role {
+    display: inline-block;
+    background: rgba(230, 202, 101, 0.18);
+    color: var(--gold-1);
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    border: 1px solid rgba(230, 202, 101, 0.5);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(230, 202, 101, 0.2);
+  }
+
+  /* Contact Grid */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .contact-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1.5px solid rgba(230, 202, 101, 0.32);
+    color: var(--text-main);
+    padding: 22px 26px;
+    border-radius: 26px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.08rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transition: 0.5s;
+  }
+  .contact-btn:hover::before { left: 100%; }
+
+  .contact-btn:hover {
+    background: linear-gradient(135deg, rgba(230, 202, 101, 0.25), rgba(184, 134, 11, 0.15));
+    border-color: var(--gold-1);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px var(--gold-glow), 0 0 20px rgba(230, 202, 101, 0.3);
+  }
+
+  .icon-box {
+    width: 60px;
+    height: 60px;
+    background: rgba(230, 202, 101, 0.1);
+    border: 1px solid rgba(230, 202, 101, 0.5);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--gold-1);
+    transition: all 0.4s ease;
+    flex-shrink: 0;
+    box-shadow: 0 0 15px rgba(230, 202, 101, 0.15);
+  }
+
+  .contact-btn:hover .icon-box {
+    background: var(--gold-gradient);
+    color: #000103;
+    border-color: transparent;
+    box-shadow: 0 0 35px rgba(230, 202, 101, 1);
+    transform: scale(1.12) rotate(8deg);
+  }
+
+  /* Footer */
+  .footer-copy {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 45px;
+    border-top: 1px solid rgba(230, 202, 101, 0.25);
+    padding-top: 24px;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+    .main-container {
+      padding: 40px 20px;
+    }
+    .creator-card {
+      flex-direction: column;
+      text-align: center;
+    }
+    .contact-title {
+      font-size: 2.2rem;
+    }
+    .navbar {
+      padding: 10px 15px;
+      gap: 8px;
+    }
+    .navbar a {
+      font-size: 0.85rem;
+      padding: 8px 12px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- แสงฟุ้งพื้นหลังรอบทิศทาง -->
+<div class="ambient-glow glow-1"></div>
+<div class="ambient-glow glow-2"></div>
+
+<!-- ละอองทองคำพื้นหลัง -->
+<div class="particles" id="particles"></div>
+
+<!-- เมนูบาร์ดีไซน์ใหม่ หรูหรา อลังการ -->
+<nav class="navbar">
+  <a href="webste.html"><i class="fas fa-home"></i> หน้าแรก</a>
+  <a href="teepak.html"><i class="fas fa-bed"></i> ที่พัก</a>
+  <a href="food.html"><i class="fas fa-utensils"></i> อาหาร</a>
+  <a href="travel.html"><i class="fas fa-map-marked-alt"></i> สถานที่ท่องเที่ยว</a>
+  <a href="contact-1.html" class="active"><i class="fas fa-address-book"></i> ติดต่อเรา</a>
+</nav>
+
+<div class="main-container">
+
+  <!-- Header -->
+  <div class="header-section">
+    <div class="header-badge">
+      <i class="fas fa-crown"></i> Imperial Ultra-Luxury Edition
+    </div>
+    <h1 class="contact-title">ช่องทางการติดต่อเรา</h1>
+    <p class="contact-subtitle">สอบถามข้อมูลการท่องเที่ยวจังหวัดสุรินทร์ หรือติดต่อพูดคุยกับทีมผู้จัดทำได้ตลอด 24 ชั่วโมง</p>
+  </div>
+
+  <!-- Creator Section -->
+  <div class="section-heading">
+    <i class="fas fa-user-shield"></i> ทีมผู้จัดทำเว็บไซต์
+  </div>
+  
+  <div class="creator-card">
+    <div class="creator-avatar-container">
+      <img src="d:\อรปรียา นาคำสี\765198179_947250554440282_1041620274732947072_n.jpg" alt="Creator Avatar" class="creator-avatar">
+    </div>
+    <div class="creator-info">
+      <span class="creator-role">Lead Developer & Designer</span>
+      <h3>ผู้จัดทำโครงการมหัศจรรย์เมืองสุรินทร์</h3>
+      <p>นางสาวอรปรียา นาคำสี นักศึกษาวิทยาลัยเทคนิคปากช่อง ปวช.1/1 สาขาวิชาเทคโนโลยีสารสนเทศ ใช้AIช่วยตกแต่งเว็บให้สวยงามน่าอ่านน่ามอง ขอขอบคุณที่เข้าชมเว็บไซต์ของเรา</p>
+    </div>
+  </div>
+
+  <!-- Contact Grid Section -->
+  <div class="section-heading">
+    <i class="fas fa-address-book"></i> ช่องทางเชื่อมต่อโดยตรง
+  </div>
+
+  <div class="contact-grid">
+    <a href="tel:0982059162" class="contact-btn">
+      <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+      <span>098-205-9162</span>
+    </a>
+    
+    <a href="https://www.instagram.com/kwa.exe__" target="_blank" class="contact-btn">
+      <div class="icon-box"><i class="fab fa-instagram"></i></div>
+      <span>kwa.exe__</span>
+    </a>
+    
+    <a href="https://www.facebook.com/profile.php?id=YOUR_FB_ID" target="_blank" class="contact-btn">
+      <div class="icon-box"><i class="fab fa-facebook-f"></i></div>
+      <span>Zee Opy</span>
+    </a>
+    
+    <a href="https://line.me/ti/p/~@kumi.ko721" target="_blank" class="contact-btn">
+      <div class="icon-box"><i class="fab fa-line"></i></div>
+      <span>@kumi.ko721</span>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-copy">&copy; 2026 เว็บไซต์ท่องเที่ยวจังหวัดสุรินทร์. All Rights Reserved.</div>
+
+</div>
+
+<script>
+  // สร้างละอองทองคำพื้นหลังอัตโนมัติ
+  const particlesContainer = document.getElementById('particles');
+  for (let i = 0; i < 50; i++) {
+    const p = document.createElement('div');
+    p.classList.add('particle');
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.animationDuration = (Math.random() * 4 + 4) + 's';
+    p.style.animationDelay = (Math.random() * 5) + 's';
+    particlesContainer.appendChild(p);
+  }
+</script>
+
+</body>
+</html>

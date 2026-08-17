@@ -1,0 +1,91 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="Yycln4W3pL40vOrDHrKN">
+    <mxGraphModel dx="1414" dy="841" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="yVp5xTItirsBlnXYoWYV-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=24;" value="งานให้สร้างคลาสสิ่งมีชีวิต 3 คลาส และสิ่งไม่มีชีวิต 3 คลาส&lt;div&gt;แอทริบิวอย่างน้อย 5&amp;nbsp;&lt;div&gt;เมททอด อย่างน้อย 3&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="137" width="343" x="360" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-2" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="คน" vertex="1">
+          <mxGeometry height="196" width="160" x="128" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-3" parent="yVp5xTItirsBlnXYoWYV-2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;เลขประจำตัว =&amp;nbsp;&lt;/div&gt;ชื่อ =&amp;nbsp;&lt;div&gt;อายุ =&amp;nbsp;&lt;/div&gt;&lt;div&gt;เพศ =&amp;nbsp;&lt;/div&gt;&lt;div&gt;ส่วนสูง =&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="89" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-4" parent="yVp5xTItirsBlnXYoWYV-2" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-5" parent="yVp5xTItirsBlnXYoWYV-2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="เดิน&lt;div&gt;พูด&lt;/div&gt;&lt;div&gt;กินอาหาร&lt;/div&gt;" vertex="1">
+          <mxGeometry height="73" width="160" y="123" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=20;" value="สิ่งมีชีวิต" vertex="1">
+          <mxGeometry height="45" width="125" x="86" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-7" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="แมว" vertex="1">
+          <mxGeometry height="196" width="160" x="439" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-8" parent="yVp5xTItirsBlnXYoWYV-7" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;เลขประจำตัว =&amp;nbsp;&lt;/div&gt;ชื่อ =&amp;nbsp;&lt;div&gt;อายุ =&amp;nbsp;&lt;/div&gt;&lt;div&gt;สีขน =&amp;nbsp;&lt;/div&gt;&lt;div&gt;สายพันธ์ุ =&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="89" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-9" parent="yVp5xTItirsBlnXYoWYV-7" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-10" parent="yVp5xTItirsBlnXYoWYV-7" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="วิ่ง&lt;br&gt;&lt;div&gt;ร้องเหมียว&lt;/div&gt;&lt;div&gt;ล่าเหยื่อ&lt;/div&gt;" vertex="1">
+          <mxGeometry height="73" width="160" y="123" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-11" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="ต้นไม้" vertex="1">
+          <mxGeometry height="196" width="160" x="803" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-12" parent="yVp5xTItirsBlnXYoWYV-11" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;เลขทะเบียนต้นไม้ =&amp;nbsp;&lt;/div&gt;ชื่อพันธ์ุ =&amp;nbsp;&lt;div&gt;อายุ =&amp;nbsp;&lt;/div&gt;&lt;div&gt;สีใบ =&amp;nbsp;&lt;/div&gt;&lt;div&gt;ชนิดลำต้น =&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="89" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-13" parent="yVp5xTItirsBlnXYoWYV-11" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-14" parent="yVp5xTItirsBlnXYoWYV-11" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="สังเคราะห์&lt;div&gt;เติบโต&lt;/div&gt;&lt;div&gt;ผลัดใบ&lt;/div&gt;" vertex="1">
+          <mxGeometry height="73" width="160" y="123" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=20;" value="สิ่งไม่มีชีวิต" vertex="1">
+          <mxGeometry height="30" width="129" x="80" y="414" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-26" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="รถยนต์&amp;nbsp;" vertex="1">
+          <mxGeometry height="196" width="160" x="128" y="527" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-27" parent="yVp5xTItirsBlnXYoWYV-26" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;ทะเบียนรถ =&amp;nbsp;&lt;/div&gt;ยี่ห่อ =&amp;nbsp;&lt;div&gt;รุ่น =&amp;nbsp;&lt;/div&gt;&lt;div&gt;ปีที่ผลิต =&amp;nbsp;&lt;/div&gt;&lt;div&gt;ความจุถังน้ำมัน =&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="89" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-28" parent="yVp5xTItirsBlnXYoWYV-26" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-29" parent="yVp5xTItirsBlnXYoWYV-26" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="สตาร์ทเครื่อง&lt;div&gt;ขับเคลื่อน&lt;/div&gt;&lt;div&gt;เติมน้ำมัน&lt;/div&gt;" vertex="1">
+          <mxGeometry height="73" width="160" y="123" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-30" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="โทรศัพท์" vertex="1">
+          <mxGeometry height="196" width="160" x="442" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-31" parent="yVp5xTItirsBlnXYoWYV-30" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;เลขเครื่อง =&amp;nbsp;&lt;/div&gt;ยี่ห้อ =&amp;nbsp;&lt;div&gt;รุ่น =&amp;nbsp;&lt;/div&gt;&lt;div&gt;สี =&amp;nbsp;&lt;/div&gt;&lt;div&gt;หน่วยความจำ =&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="89" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-32" parent="yVp5xTItirsBlnXYoWYV-30" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-33" parent="yVp5xTItirsBlnXYoWYV-30" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="เปิดเครื่อง&lt;div&gt;โทรออก&lt;/div&gt;&lt;div&gt;ชาร์จแบต&lt;/div&gt;" vertex="1">
+          <mxGeometry height="73" width="160" y="123" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-34" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="บ้าน" vertex="1">
+          <mxGeometry height="196" width="160" x="840" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-35" parent="yVp5xTItirsBlnXYoWYV-34" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;เลขรหัสบ้าน =&amp;nbsp;&lt;/div&gt;ประเภท =&amp;nbsp;&lt;div&gt;ขนาด =&amp;nbsp;&lt;/div&gt;&lt;div&gt;จำนวนห้อง =&amp;nbsp;&lt;/div&gt;&lt;div&gt;วัสดุหลัก =&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="89" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-36" parent="yVp5xTItirsBlnXYoWYV-34" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="yVp5xTItirsBlnXYoWYV-37" parent="yVp5xTItirsBlnXYoWYV-34" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="เปิดประตู&lt;div&gt;ล็อคประตู&lt;/div&gt;&lt;div&gt;ทำความสะอาด&lt;/div&gt;" vertex="1">
+          <mxGeometry height="73" width="160" y="123" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

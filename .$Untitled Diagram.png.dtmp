@@ -1,0 +1,100 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="CVl-Rc8jFtNDoLeTScZ5">
+    <mxGraphModel dx="1414" dy="841" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8wwXo7eialG7QOOD-B0g-4" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="อาจารย์" vertex="1">
+          <mxGeometry height="100" width="54" x="518" y="7" as="geometry" />
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-25" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="นักศึกษา" vertex="1">
+          <mxGeometry height="100" width="54" x="142" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-26" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="เจ้าหน้าที่" vertex="1">
+          <mxGeometry height="100" width="54" x="922" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="600" width="1110" x="15" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-32" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=19;" value="การใช้งานห้องทดลอง&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="246" x="4" y="228" as="geometry" />
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-33" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="ห้องวิทยาศาสตร์/ห้องทดลอง" vertex="1">
+          <mxGeometry height="86" width="155" x="488.5" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-34" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="ศึกษา&lt;font style=&quot;font-size: 13px;&quot;&gt;/&lt;/font&gt;เรียน" vertex="1">
+          <mxGeometry height="70" width="140" x="133" y="389" as="geometry" />
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-35" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="สอน" vertex="1">
+          <mxGeometry height="70" width="140" x="544" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-36" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="ดูแลห้องทดลอง" vertex="1">
+          <mxGeometry height="70" width="140" x="898" y="394" as="geometry" />
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-37" edge="1" parent="1" source="8wwXo7eialG7QOOD-B0g-33" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.223;exitY=0.07;exitDx=0;exitDy=0;exitPerimeter=0;" target="8wwXo7eialG7QOOD-B0g-25" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="566" y="279" as="sourcePoint" />
+            <mxPoint x="616" y="229" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-38" edge="1" parent="1" source="8wwXo7eialG7QOOD-B0g-33" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.423;exitY=-0.012;exitDx=0;exitDy=0;exitPerimeter=0;" target="8wwXo7eialG7QOOD-B0g-4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="566" y="279" as="sourcePoint" />
+            <mxPoint x="616" y="229" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-39" edge="1" parent="1" source="8wwXo7eialG7QOOD-B0g-33" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.758;exitY=0.07;exitDx=0;exitDy=0;exitPerimeter=0;" target="8wwXo7eialG7QOOD-B0g-26" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="745" y="373" as="sourcePoint" />
+            <mxPoint x="736" y="131" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-41" edge="1" parent="1" source="8wwXo7eialG7QOOD-B0g-33" style="endArrow=classic;html=1;rounded=0;exitX=0.565;exitY=0.988;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.586;entryY=-0.029;entryDx=0;entryDy=0;entryPerimeter=0;" target="8wwXo7eialG7QOOD-B0g-35" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="566" y="579" as="sourcePoint" />
+            <mxPoint x="616" y="529" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-42" edge="1" parent="1" source="8wwXo7eialG7QOOD-B0g-33" style="endArrow=classic;html=1;rounded=0;exitX=0.016;exitY=0.628;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.957;entryY=0.243;entryDx=0;entryDy=0;entryPerimeter=0;" target="8wwXo7eialG7QOOD-B0g-34" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="317" y="436" as="sourcePoint" />
+            <mxPoint x="367" y="386" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-43" edge="1" parent="1" source="8wwXo7eialG7QOOD-B0g-33" style="endArrow=classic;html=1;rounded=0;exitX=0.997;exitY=0.407;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.021;entryY=0.3;entryDx=0;entryDy=0;entryPerimeter=0;" target="8wwXo7eialG7QOOD-B0g-36" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="747" y="354" as="sourcePoint" />
+            <mxPoint x="797" y="304" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-44" parent="1" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" value="เรียนมากกว่า 1 วิชา" vertex="1">
+          <mxGeometry height="70" width="140" x="48" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-45" parent="1" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" value="สอนมากกว่า 1 วิชา" vertex="1">
+          <mxGeometry height="70" width="140" x="372" y="693" as="geometry" />
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-46" parent="1" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" value="อันตราย/เหตุระเบิด" vertex="1">
+          <mxGeometry height="70" width="140" x="811" y="667" as="geometry" />
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-47" edge="1" parent="1" source="8wwXo7eialG7QOOD-B0g-34" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=0.364;exitY=1.029;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.7;entryY=0.057;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;dashPattern=8 8;" target="8wwXo7eialG7QOOD-B0g-44" value="Extends">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="225" y="570" as="sourcePoint" />
+            <mxPoint x="385" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-48" edge="1" parent="1" source="8wwXo7eialG7QOOD-B0g-35" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.757;entryY=0.057;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.329;exitY=1.014;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;dashPattern=8 8;" target="8wwXo7eialG7QOOD-B0g-45" value="Extends">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="615" y="554" as="sourcePoint" />
+            <mxPoint x="775" y="554" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8wwXo7eialG7QOOD-B0g-49" edge="1" parent="1" source="8wwXo7eialG7QOOD-B0g-36" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;dashed=1;dashPattern=8 8;entryX=0.771;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.921;exitY=0.786;exitDx=0;exitDy=0;exitPerimeter=0;" target="8wwXo7eialG7QOOD-B0g-46" value="Extends">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="615" y="554" as="sourcePoint" />
+            <mxPoint x="775" y="554" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
