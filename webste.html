@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ท่องเที่ยวสุรินทร์ - มหัศจรรย์แดนช้างระดับลักชูรี</title>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+  :root { 
+    --gold-primary: #f3e5ab;
+    --gold-accent: #d4af37;
+    --gold-light: #fff2cc;
+    --gold-glow: rgba(212, 175, 55, 0.4);
+    --bg-dark: #030508;
+    --bg-card: rgba(15, 23, 42, 0.75);
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+  }
+  
+  * { box-sizing: border-box; }
+
+  body { 
+    font-family: 'Prompt', sans-serif; 
+    background-color: var(--bg-dark); 
+    color: var(--text-main); 
+    margin: 0; 
+    line-height: 1.9; 
+    overflow-x: hidden;
+  }
+
+  /* Scroll Reveal & Animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Hero Section อลังการพรีเมียม */
+  .hero { 
+    height: 95vh; 
+    background: linear-gradient(to bottom, rgba(3,5,8,0.2), rgba(3,5,8,0.95)), url('watermarked_img_11756330759573689423.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to top, var(--bg-dark), transparent);
+  }
+  
+  .hero h1 { 
+    font-size: 5.2rem; 
+    margin-bottom: 20px; 
+    font-weight: 700; 
+    letter-spacing: -1px; 
+    background: linear-gradient(135deg, #ffffff 15%, #ffd700 70%, #d4af37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInDown 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: drop-shadow(0 15px 35px rgba(0,0,0,0.8));
+    z-index: 1;
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+    opacity: 0.95;
+    animation: fadeInUp 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    color: var(--text-muted);
+    z-index: 1;
+    max-width: 800px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.9);
+    font-weight: 300;
+  }
+
+  /* Navigation Bar ลักชูรีกระจกใส */
+  .navbar {
+    background: rgba(3, 5, 8, 0.75);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    padding: 22px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  }
+
+  .navbar a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin: 0 22px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .navbar a:hover {
+    color: var(--gold-primary);
+    transform: translateY(-3px);
+    text-shadow: 0 0 25px var(--gold-glow);
+  }
+
+  .navbar a i { color: var(--gold-accent); }
+
+  /* Main Container */
+  .container { max-width: 1250px; margin: 90px auto; padding: 0 25px; }
+  
+  .main-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+  }
+
+  /* การ์ดสไตล์ไฮเอ็นด์พรีเมียม */
+  .card {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    height: 500px;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: #0b1329;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+  }
+
+  .card:hover { 
+    transform: translateY(-16px) scale(1.02);
+    box-shadow: 0 40px 80px rgba(212, 175, 55, 0.3);
+    border-color: var(--gold-primary);
+  }
+
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .card:hover img { transform: scale(1.18); }
+
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 30px;
+    background: linear-gradient(to top, rgba(3,5,8,0.98) 30%, rgba(3,5,8,0.8) 80%, transparent);
+    color: white;
+    transition: all 0.4s ease;
+  }
+
+  .card h2 { margin: 0 0 10px 0; color: var(--gold-primary); font-size: 1.7rem; text-shadow: 0 2px 10px rgba(0,0,0,0.8); font-weight: 600; }
+  .card p { font-size: 1rem; opacity: 0.9; margin: 0; color: var(--text-muted); font-weight: 300; }
+
+  /* Modal อลังการละมุนตา */
+  .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(3,5,8,0.95); backdrop-filter: blur(25px); padding: 20px; animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+  .modal-box { background: linear-gradient(145deg, #101932, #060a14); max-width: 700px; margin: 8% auto; padding: 50px; border-radius: 36px; color: white; position: relative; border: 2px solid var(--gold-accent); box-shadow: 0 0 80px rgba(212, 175, 55, 0.3); }
+  .close-btn { position: absolute; top: 25px; right: 30px; font-size: 32px; cursor: pointer; color: var(--gold-primary); transition: 0.4s; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: rgba(212,175,55,0.1); border-radius: 50%; border: 1px solid rgba(212,175,55,0.3); }
+  .close-btn:hover { transform: rotate(90deg) scale(1.1); background: var(--gold-accent); color: #000; box-shadow: 0 0 20px var(--gold-glow); }
+
+  /* กิจกรรมแนะนำ */
+  .activities-section {
+    padding: 80px 40px;
+    background: linear-gradient(145deg, #091022, #040812);
+    border-radius: 40px;
+    margin: 90px auto;
+    max-width: 1200px;
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  }
+
+  .activities-title {
+    color: var(--gold-primary);
+    font-size: 2.8rem;
+    margin-bottom: 45px;
+    text-shadow: 0 0 30px var(--gold-glow);
+    font-weight: 700;
+  }
+
+  .activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+  }
+
+  .activity-item {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px 25px;
+    border-radius: 28px;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    cursor: pointer;
+  }
+
+  .activity-item:hover {
+    transform: translateY(-12px);
+    background: rgba(212, 175, 55, 0.06);
+    border-color: var(--gold-primary);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.25);
+  }
+
+  .activity-item i {
+    font-size: 3rem;
+    color: var(--gold-accent);
+    filter: drop-shadow(0 0 15px var(--gold-glow));
+  }
+
+  .activity-item span { color: var(--text-main); font-size: 1.15rem; font-weight: 500; }
+
+  /* ปฏิทินและแกลเลอรี */
+  .calendar-section {
+    background: linear-gradient(145deg, #0b1329, #0f1a36);
+    padding: 70px 60px;
+    border-radius: 40px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    max-width: 1200px;
+    margin: 90px auto;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  }
+
+  .calendar-section:hover { 
+    border-color: var(--gold-primary); 
+    box-shadow: 0 0 50px rgba(212, 175, 55, 0.3);
+  }
+
+  .calendar-title { color: var(--gold-primary); font-size: 2.3rem; margin-bottom: 40px; display: flex; align-items: center; gap: 18px; font-weight: 600; text-shadow: 0 0 20px var(--gold-glow); }
+  
+  .event-item { 
+    background: rgba(255, 255, 255, 0.02); 
+    padding: 28px 36px; 
+    margin-bottom: 22px; 
+    border-radius: 24px; 
+    border-left: 6px solid var(--gold-accent); 
+    display: flex; 
+    align-items: center; 
+    gap: 30px; 
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .event-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(14px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+  }
+
+  .event-modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(3,5,8,0.97); backdrop-filter: blur(30px); padding: 50px; overflow-y: auto; }
+  .modal-container { max-width: 1200px; margin: 3% auto; text-align: center; }
+  
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
+  .gallery-img { width: 100%; height: 320px; object-fit: cover; border-radius: 28px; border: 2px solid rgba(212,175,55,0.4); transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1); box-shadow: 0 20px 40px rgba(0,0,0,0.7); }
+  .gallery-img:hover { transform: scale(1.06); border-color: var(--gold-primary); box-shadow: 0 25px 60px rgba(212, 175, 55, 0.5); }
+
+  /* ข้อมูลท่องเที่ยว Section */
+  .info-section {
+    padding: 80px 50px;
+    background: linear-gradient(145deg, #0b1329, #0f1a36);
+    border-radius: 40px;
+    margin: 90px auto;
+    max-width: 1200px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  }
+
+  .info-title {
+    color: var(--gold-primary);
+    text-align: center;
+    font-size: 2.9rem;
+    margin-bottom: 55px;
+    text-shadow: 0 0 30px var(--gold-glow);
+    font-weight: 700;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 35px;
+  }
+
+  .info-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 45px 40px;
+    border-radius: 30px;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    color: var(--text-muted);
+  }
+
+  .info-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-12px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 25px 50px rgba(212, 175, 55, 0.25);
+  }
+
+  .info-card h3 {
+    color: var(--gold-primary);
+    margin-top: 0;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 1.55rem;
+    font-weight: 600;
+  }
+
+  .info-card p { line-height: 2.2; font-size: 1.05rem; }
+  strong { color: #fff; font-weight: 500; }
+
+  /* Footer Section ลักชูรีสูงสุด */
+  .footer-container {
+    background: radial-gradient(circle at center, #111b33 0%, #030508 100%);
+    padding: 100px 20px;
+    color: white;
+    text-align: center;
+    border-top: 4px solid var(--gold-accent);
+    box-shadow: inset 0 40px 60px rgba(0,0,0,0.95);
+    margin-top: 120px;
+  }
+
+  .footer-title {
+    font-size: 2.8rem;
+    letter-spacing: 6px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    filter: drop-shadow(0 4px 15px rgba(255,215,0,0.4));
+  }
+
+  .contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .contact-btn {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 28px 45px;
+    border-radius: 28px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    min-width: 190px;
+  }
+
+  .contact-btn:hover {
+    background: rgba(212, 175, 55, 0.15);
+    transform: translateY(-10px) scale(1.05);
+    border-color: var(--gold-primary);
+    box-shadow: 0 0 45px var(--gold-glow);
+  }
+
+  .contact-btn i { font-size: 2.2rem; color: var(--gold-accent); filter: drop-shadow(0 0 12px var(--gold-glow)); }
+  .contact-btn span { font-weight: 500; font-size: 1.15rem; }
+
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @media (max-width: 768px) { 
+    .hero h1 { font-size: 3.5rem; }
+    .navbar a { margin: 8px 12px; font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<header class="hero">
+  <h1>มหัศจรรย์แดนช้าง สุรินทร์</h1>
+  <p>สัมผัสความวิจิตรตระการตาแห่งอารยธรรมขอมโบราณ และมนต์เสน่ห์แห่งผืนแผ่นดินทอง</p>
+</header>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <a href="webste.html"><i class="fas fa-home"></i> หน้าแรก</a>
+  <a href="teepak.html"><i class="fas fa-bed"></i> ที่พัก</a>
+  <a href="food.html"><i class="fas fa-utensils"></i> อาหาร</a>
+  <a href="travel.html"><i class="fas fa-map-marked-alt"></i> สถานที่ท่องเที่ยว</a>
+  <a href="contact-1.html"><i class="fas fa-address-book"></i> ติดต่อเรา</a>
+</nav>
+
+<!-- Main Grid Section -->
+<div class="container">
+  <main class="main-grid">
+    <article class="card reveal" onclick="openModal('modal1')">
+      <img src="images.jpg" alt="ปราสาทศีขรภูมิ">
+      <div class="card-content">
+        <h2>ปราสาทศีขรภูมิ</h2>
+        <p>คลิกเพื่ออ่านประวัติและความงามอันล้ำค่า</p>
+      </div>
+    </article>
+    
+    <article class="card reveal" onclick="openModal('modal2')">
+      <img src="32f9acf0-bb0b-11eb-8220-9f8ed436e416_original.jpg" alt="หมู่บ้านช้าง">
+      <div class="card-content">
+        <h2>หมู่บ้านช้าง บ้านตากลาง</h2>
+        <p>คลิกเพื่อดูวิถีชีวิตคชศาสตร์ระดับโลก</p>
+      </div>
+    </article>
+
+    <article class="card reveal" onclick="openModal('modal3')">
+      <img src="images (1).jpg" alt="ปราสาทหินบ้านพลวง">
+      <div class="card-content">
+        <h2>ปราสาทหินบ้านพลวง</h2>
+        <p>คลิกเพื่อชมความประณีตแห่งสถาปัตยกรรม</p>
+      </div>
+    </article>
+
+    <article class="card reveal" onclick="openModal('modal4')">
+      <img src="images (2).jpg" alt="หมู่บ้านผ้าไหม">
+      <div class="card-content">
+        <h2>ผ้าไหมบ้านท่าสว่าง</h2>
+        <p>คลิกเพื่อสัมผัสศิลปะการทอผ้ายกทองชั้นสูง</p>
+      </div>
+    </article>
+  </main>
+</div>
+
+<!-- Modals for Cards -->
+<div id="modal1" class="modal">
+  <div class="modal-box">
+    <span class="close-btn" onclick="closeModal('modal1')">&times;</span>
+    <h2 style="color:var(--gold-primary)">ปราสาทศีขรภูมิ</h2>
+    <p>ปราสาทขอมโบราณอายุกว่าพันปี โดดเด่นด้วยภาพสลักนางอัปสราที่สมบูรณ์และงดงามที่สุดในสุรินทร์ สร้างขึ้นในพุทธศตวรรษที่ 17 สำหรับประกอบพิธีกรรมทางศาสนาฮินดู ลวดลายการแกะสลักหินทรายมีความคมชัดและทรงคุณค่าทางประวัติศาสตร์อย่างยิ่ง</p>
+  </div>
+</div>
+
+<div id="modal2" class="modal">
+  <div class="modal-box">
+    <span class="close-btn" onclick="closeModal('modal2')">&times;</span>
+    <h2 style="color:var(--gold-primary)">หมู่บ้านช้าง บ้านตากลาง</h2>
+    <p>หมู่บ้านช้างที่ใหญ่ที่สุดในโลก ณ ศูนย์คชศึกษา เป็นสถานที่ซึ่งคนและช้างอาศัยอยู่ร่วมกันเสมือนสมาชิกในครอบครัว ท่ามกลางบรรยากาศธรรมชาติริมแม่น้ำมูล เรียนรู้วัฒนธรรมและสายสัมพันธ์อันแนบแน่นระหว่างชาวกูยกับช้างคู่บ้านคู่เมือง</p>
+  </div>
+</div>
+
+<div id="modal3" class="modal">
+  <div class="modal-box">
+    <span class="close-btn" onclick="closeModal('modal3')">&times;</span>
+    <h2 style="color:var(--gold-primary)">ปราสาทหินบ้านพลวง</h2>
+    <p>โบราณสถานศิลปะแบบบาปวน โดดเด่นด้วยงานแกะสลักหินทรายอันประณีต คมชัด ลวดลายกลีบดอกไม้และเทวดานพเคราะห์บนหน้าจั่วแสดงถึงความใส่ใจในรายละเอียด ถือเป็นหนึ่งในปราสาทหินขนาดเล็กที่มีความงดงามสมบูรณ์ที่สุดในประเทศไทย</p>
+  </div>
+</div>
+
+<div id="modal4" class="modal">
+  <div class="modal-box">
+    <span class="close-btn" onclick="closeModal('modal4')">&times;</span>
+    <h2 style="color:var(--gold-primary)">ผ้าไหมบ้านท่าสว่าง</h2>
+    <p>สัมผัสเทคนิคการทอผ้าชั้นสูงแบบราชสำนักจากกลุ่ม "จันทร์โสมา" ฟื้นฟูและสืบสานศิลปะการทอผ้ายกทองโบราณ ลวดลายมีความวิจิตรอลังการ ใช้เส้นไหมทองแท้ถักทอด้วยความประณีตระดับโลกจนเป็นที่ประจักษ์ในระดับสากล</p>
+  </div>
+</div>
+
+<!-- Activities Section -->
+<section class="activities-section reveal">
+  <h2 class="activities-title">✨ กิจกรรมแนะนำสุดพิเศษ</h2>
+  <div class="activity-grid">
+    <div class="activity-item">
+      <i class="fas fa-camera"></i>
+      <span>ถ่ายรูปเช็คอินมุมลับ</span>
+    </div>
+    <div class="activity-item">
+      <i class="fas fa-shopping-basket"></i>
+      <span>ช้อปปิ้งผ้าไหมพรีเมียม</span>
+    </div>
+    <div class="activity-item">
+      <i class="fas fa-utensils"></i>
+      <span>ลิ้มรสอาหารพื้นถิ่น</span>
+    </div>
+    <div class="activity-item">
+      <i class="fas fa-tree"></i>
+      <span>สัมผัสธรรมชาติอันบริสุทธิ์</span>
+    </div>
+  </div>
+</section>
+
+<!-- Calendar / Festival Section -->
+<aside class="calendar-section reveal" onclick="openModal('calendarModal')">
+  <h3 class="calendar-title"><i class="fas fa-calendar-alt"></i> ปฏิทินท่องเที่ยว (กดเพื่อชมภาพบรรยากาศงานเทศกาล)</h3>
+  <ul style="list-style:none; padding:0; margin:0;">
+    <li class="event-item"><span style="background:var(--gold-accent); color:#000; padding:8px 16px; border-radius:12px; font-weight:bold;">พ.ย.</span> <span style="color:#fff; font-size:1.15rem; margin-left:10px;">มหัศจรรย์งานช้างสุรินทร์</span></li>
+    <li class="event-item"><span style="background:var(--gold-accent); color:#000; padding:8px 16px; border-radius:12px; font-weight:bold;">ต.ค.</span> <span style="color:#fff; font-size:1.15rem; margin-left:10px;">ประเพณีแซนโฎนตา</span></li>
+  </ul>
+</aside>
+
+<!-- Modal Gallery -->
+<div id="calendarModal" class="event-modal">
+  <div class="modal-container">
+    <span class="close-btn" onclick="closeModal('calendarModal')">&times;</span>
+    <h2 style="color:var(--gold-primary); margin-bottom:20px; font-size:2.4rem;">ประมวลภาพบรรยากาศงานเทศกาล</h2>
+    <div class="gallery-grid">
+      <img src="images (3).jpg" class="gallery-img" alt="งานช้างสุรินทร์">
+      <img src="32f9acf0-bb0b-11eb-8220-9f8ed436e416_original.jpg" class="gallery-img" alt="ประเพณีแซนโฎนตา">
+      <img src="images.jpg" class="gallery-img" alt="ตักบาตรหลังช้าง">
+    </div>
+  </div>
+</div>
+
+<!-- Info Section -->
+<section class="info-section reveal">
+  <h2 class="info-title">✨ ข้อมูลท่องเที่ยวสุรินทร์</h2>
+  <div class="info-grid">
+    <div class="info-card">
+      <h3><i class="fas fa-clock"></i> ช่วงเวลาแนะนำ</h3>
+      <p><strong>ก.พ.</strong> งานผ้าไหมและปะเกือม<br><strong>มี.ค.</strong> สืบสานตำนานปราสาทช่างปี่<br><strong>เม.ย.</strong> บวชนาคช้าง / สงกรานต์ช้าง<br><strong>ก.ค.</strong> ตักบาตรบนหลังช้าง<br><strong>ต.ค.</strong> ประเพณีแซนโฎนตา<br><strong>พ.ย.</strong> มหัศจรรย์งานช้างสุรินทร์ (ห้ามพลาด!)<br><strong>ธ.ค.</strong> เทศกาลปลาไหลและข้าวใหม่</p>
+    </div>
+    <div class="info-card">
+      <h3><i class="fas fa-gem"></i> ของดีประจำจังหวัด</h3>
+      <p><strong>เด่น:</strong> ผ้าไหม, ข้าวหอมมะลิ (ทุ่งกุลาร้องไห้), เครื่องเงินบ้านเขวาสินรินทร์<br><strong>กิน:</strong> ผักกาดดอง, เนื้อโคคุณภาพ, กุนเชียง<br><strong>สัญลักษณ์:</strong> ช้าง, ปราสาทหินโบราณ</p>
+    </div>
+    <div class="info-card">
+      <h3><i class="fas fa-map-marker-alt"></i> จุดเช็คอิน & การเดินทาง</h3>
+      <p><strong>ที่น่าเที่ยว:</strong> วนอุทยานพนมสวาย, อ่างเก็บน้ำห้วยเสนง, พิพิธภัณฑ์สถานแห่งชาติสุรินทร์, ทะเลสาบทุ่งกุลา, เขาทมอโรย</p>
+      <p><strong>การเดินทาง:</strong> สะดวกสบายด้วย รถไฟ, รถทัวร์, รถยนต์ส่วนตัว และเครื่องบิน</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer-container reveal">
+  <p class="footer-title">Contact Us</p>
+  <div class="contact-grid">
+    <a href="tel:0982059162" class="contact-btn">
+      <i class="fas fa-phone-alt"></i>
+      <span>098-205-9162</span>
+    </a>
+    <a href="https://www.instagram.com/kwa.exe__" target="_blank" class="contact-btn">
+      <i class="fab fa-instagram"></i>
+      <span>kwa.exe__</span>
+    </a>
+    <a href="https://www.facebook.com/" target="_blank" class="contact-btn">
+      <i class="fab fa-facebook"></i>
+      <span>Zee Opy</span>
+    </a>
+    <a href="https://line.me/ti/p/~@kumi.ko721" target="_blank" class="contact-btn">
+      <i class="fab fa-line"></i>
+      <span>@kumi.ko721</span>
+    </a>
+  </div>
+  <p style="margin-top: 60px; color: var(--text-muted); font-size: 1rem;">&copy; 2026 เว็บไซต์ท่องเที่ยวจังหวัดสุรินทร์. All Rights Reserved.</p>
+</footer>
+
+<!-- JavaScript สำหรับจัดการ Modal และ Scroll Reveal -->
+<script>
+  function openModal(id) { 
+    document.getElementById(id).style.display = "block"; 
+  }
+  function closeModal(id) { 
+    document.getElementById(id).style.display = "none"; 
+  }
+  window.onclick = function(event) { 
+    if (event.target.classList.contains('modal') || event.target.classList.contains('event-modal')) { 
+      event.target.style.display = "none"; 
+    } 
+  }
+
+  // ระบบตรวจจับการเลื่อนหน้าจอเพื่อแสดงผลอนิเมชันทีละส่วน
+  window.addEventListener('scroll', revealOnScroll);
+
+  function revealOnScroll() {
+    var reveals = document.querySelectorAll('.reveal');
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 120;
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add('active');
+      }
+    }
+  }
+
+  // เรียกใช้ครั้งแรกทันทีเผื่อกรณีหน้าจอเล็กหรือเลื่อนค้างไว้
+  revealOnScroll();
+</script>
+
+</body>
+</html>
