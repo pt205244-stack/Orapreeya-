@@ -33,8 +33,9 @@
 
   /* Hero Section (แบนเนอร์หลักพร้อมรูปภาพ) */
   .hero {
-    min-height: 85vh; 
-    background: linear-gradient(rgba(255, 143, 171, 0.3), rgba(74, 78, 105, 0.4)), url('watermarked_img_11756330759573689423.jpg'); 
+    height: 75vh; 
+    /* ใช้รูปภาพแบนเนอร์ของคุณ พร้อมเพิ่มเลเยอร์สีชมพูโปร่งแสงทับเล็กน้อยเพื่อให้ตัวหนังสือเด่นชัดขึ้น */
+    background: linear-gradient(rgba(255, 143, 171, 0.25), rgba(74, 78, 105, 0.35)), url('watermarked_img_11756330759573689423.jpg'); 
     background-size: cover; 
     background-position: center; 
     display: flex; 
@@ -43,50 +44,26 @@
     justify-content: center; 
     color: white; 
     text-align: center;
-    padding: 50px 20px;
+    padding: 30px;
     position: relative;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
   }
   
   .hero h1 { 
-    font-size: 3.5rem; 
-    margin-bottom: 10px; 
+    font-size: 4rem; 
+    margin-bottom: 15px; 
     font-weight: 700; 
     letter-spacing: -1px;
     text-shadow: 0 4px 20px rgba(0,0,0,0.4);
   }
 
   .hero p {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     max-width: 700px;
     font-weight: 400;
     opacity: 0.95;
-    margin-bottom: 25px;
     text-shadow: 0 2px 10px rgba(0,0,0,0.4);
-  }
-
-  /* สไตล์รูปภาพเพิ่มเติมในส่วน Hero */
-  .hero-img-container {
-    max-width: 750px;
-    width: 100%;
-    margin-top: 15px;
-    border-radius: 25px;
-    overflow: hidden;
-    border: 4px solid #ffffff;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    transition: var(--transition);
-  }
-
-  .hero-img-container:hover {
-    transform: scale(1.02);
-  }
-
-  .hero-img-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
   }
 
   /* Navigation Bar */
@@ -428,7 +405,7 @@
   .contact-btn i { font-size: 1.4rem; }
 
   @media (max-width: 768px) { 
-    .hero h1 { font-size: 2.5rem; }
+    .hero h1 { font-size: 2.8rem; }
     .navbar a { margin: 6px 8px; font-size: 0.95rem; }
   }
 </style>
@@ -439,16 +416,11 @@
 <header class="hero">
   <h1>✨ ท่องเที่ยวสุรินทร์ 🐘</h1>
   <p>มาร่วมสัมผัสความน่ารัก สดใส และแหล่งท่องเที่ยวอันแสนอบอุ่นของจังหวัดสุรินทร์กันเถอะ!</p>
-  
-  <!-- รูปภาพแบนเนอร์ที่คุณต้องการแทรก -->
-  <div class="hero-img-container">
-    <img src="watermarked_img_11756330759573689423_2.jpg" alt="เที่ยวสุรินทร์จริงๆ เมืองช้างและปราสาทพันปี">
-  </div>
 </header>
 
 <!-- Navigation Bar -->
 <nav class="navbar">
-  <a href="webste-2.html"><i class="fas fa-home"></i> หน้าแรก</a>
+  <a href="webste.1.html"><i class="fas fa-home"></i> หน้าแรก</a>
   <a href="teepak-1.html"><i class="fas fa-bed"></i> ที่พัก</a>
   <a href="food-1.html"><i class="fas fa-utensils"></i> อาหาร</a>
   <a href="travel-1.html"><i class="fas fa-map-marked-alt"></i> สถานที่ท่องเที่ยว</a>

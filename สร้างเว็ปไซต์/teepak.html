@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ท่องเที่ยวสุรินทร์ - ดินแดนช้างน่ารักและวัฒนธรรมสุดอบอุ่น 🐘💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+  :root { 
+    --primary: #ff8fab;         /* ชมพูพาสเทลหวานๆ */
+    --primary-light: #ffb3c6;   
+    --surface: #ffffff;         /* พื้นหลังการ์ดขาวสะอาด */
+    --accent: #fb8500;          /* ส้มสดใส ตัดขอบน่ารัก */
+    --accent-hover: #ffb703;
+    --bg-main: #fff0f3;         /* พื้นหลังสีชมพูอ่อนพาสเทล */
+    --card-bg: #ffffff;
+    --text-main: #4a4e69;       /* สีตัวอักษรละมุน อ่านง่าย */
+    --text-muted: #9a8c98;
+    --border-color: #ffccd5;
+    --shadow-glow: 0 10px 25px rgba(255, 143, 171, 0.15);
+    --shadow-hover: 0 15px 35px rgba(255, 143, 171, 0.3);
+    --transition: all 0.3s ease;
+  }
+  
+  * { box-sizing: border-box; }
+
+  body { 
+    font-family: 'Prompt', sans-serif; 
+    background-color: var(--bg-main); 
+    color: var(--text-main); 
+    margin: 0; 
+    line-height: 1.8; 
+  }
+
+  /* Cute Hero Section */
+  .hero { 
+    height: 70vh; 
+    background: linear-gradient(to bottom, rgba(255, 182, 193, 0.4), rgba(255, 240, 243, 0.9)), 
+                url('https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: #4a4e69; 
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    border-bottom: 4px dashed var(--primary-light);
+  }
+  .hero-content { max-width: 900px; z-index: 2; }
+  .hero-badge {
+    display: inline-block;
+    background: #ffffff;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(255, 143, 171, 0.3);
+  }
+  .hero h1 { 
+    font-size: 3.5rem; 
+    margin: 0 0 15px 0; 
+    font-weight: 700; 
+    color: #2b2d42;
+  }
+  .hero p { 
+    font-size: 1.15rem; 
+    color: #6c757d; 
+    font-weight: 400; 
+    margin: 0 auto;
+    max-width: 700px;
+  }
+
+  /* Pastel Sticky Navbar */
+  .navbar {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #ffe5ec;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  }
+  .navbar a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+  .navbar a:hover { 
+    background-color: var(--primary-light); 
+    color: #fff; 
+  }
+  .navbar a i { color: var(--primary); margin-right: 6px; }
+  .navbar a:hover i { color: #fff; }
+
+  /* Main Container */
+  .container { max-width: 1100px; margin: 60px auto; padding: 0 25px; }
+  
+  .section-heading {
+    text-align: center;
+    color: #2b2d42;
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-heading::after {
+    content: '🌸 🐘 🌸';
+    font-size: 1.2rem;
+    letter-spacing: 10px;
+    margin-top: 5px;
+  }
+  .section-heading i { color: var(--primary); font-size: 2rem; }
+
+  /* Cute Place Card */
+  .place-card {
+    background: var(--card-bg);
+    border-radius: 24px;
+    margin-bottom: 50px;
+    overflow: hidden;
+    box-shadow: var(--shadow-glow);
+    transition: var(--transition);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 2px solid #ffe5ec;
+  }
+  .place-card:hover { 
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+    border-color: var(--primary);
+  }
+  .place-card:nth-child(even) { grid-template-columns: 1fr 1fr; }
+  .place-card:nth-child(even) .place-img-container { order: 2; }
+  .place-card:nth-child(even) .place-content-side { order: 1; }
+
+  .place-img-container {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    overflow: hidden;
+    background: #fff;
+    cursor: pointer;
+    position: relative;
+  }
+  .place-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    color: var(--primary);
+    padding: 6px 16px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 50px;
+    z-index: 10;
+    border: 1px solid var(--primary-light);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+  .place-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .place-img-container:hover .place-img { 
+    transform: scale(1.05); 
+  }
+
+  .place-content-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--surface);
+  }
+
+  .place-body { padding: 40px; }
+  .place-title { 
+    color: #2b2d42; 
+    font-size: 2rem; 
+    margin: 0 0 12px 0; 
+    font-weight: 700; 
+  }
+  .place-desc { color: #6c757d; font-size: 1rem; margin-bottom: 20px; font-weight: 300; }
+  
+  .place-recommendation {
+    background: #fff9fb;
+    border-left: 4px solid var(--primary);
+    padding: 14px 18px;
+    border-radius: 0 12px 12px 0;
+    font-size: 0.9rem;
+    color: #595d6e;
+    border-top: 1px solid #ffe5ec;
+    border-right: 1px solid #ffe5ec;
+    border-bottom: 1px solid #ffe5ec;
+  }
+  .place-recommendation strong { color: var(--primary); }
+
+  /* Interaction Bar */
+  .interaction-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 25px;
+    border-top: 1px solid #f1f3f5;
+    background: #faf9fb;
+  }
+  .action-btn {
+    background: transparent;
+    border: none;
+    color: #8d99ae;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-family: 'Prompt', sans-serif;
+  }
+  .action-btn:hover { 
+    background: #ffe5ec; 
+    color: var(--primary); 
+  }
+  .action-btn.liked { color: #ff477e; }
+
+  /* Comments Section */
+  .comments-section {
+    padding: 20px 40px;
+    background: #fdfcfe;
+    border-top: 1px solid #f1f3f5;
+  }
+  .comments-title {
+    font-size: 0.9rem;
+    color: var(--primary);
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+  }
+  .comment-list {
+    margin-bottom: 12px;
+    max-height: 130px;
+    overflow-y: auto;
+    padding-right: 5px;
+  }
+  .comment-list::-webkit-scrollbar { width: 4px; }
+  .comment-list::-webkit-scrollbar-thumb { background: var(--primary-light); border-radius: 4px; }
+
+  .comment-item {
+    background: #ffffff;
+    padding: 10px 14px;
+    border-radius: 12px;
+    margin-bottom: 6px;
+    font-size: 0.88rem;
+    border: 1px solid #ffe5ec;
+    color: #4a4e69;
+  }
+  .comment-item strong { color: var(--primary); margin-right: 6px; }
+
+  .comment-form { display: flex; gap: 8px; }
+  .comment-input {
+    flex: 1;
+    background: #ffffff;
+    border: 1px solid #ffccd5;
+    padding: 10px 16px;
+    border-radius: 12px;
+    color: #4a4e69;
+    font-family: 'Prompt', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: var(--transition);
+  }
+  .comment-input:focus { border-color: var(--primary); box-shadow: 0 0 8px rgba(255, 143, 171, 0.3); }
+  
+  .send-btn {
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    padding: 0 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Prompt', sans-serif;
+    transition: var(--transition);
+  }
+  .send-btn:hover { background: #ff6b8b; box-shadow: 0 4px 10px rgba(255, 107, 139, 0.4); }
+
+  /* Lightbox Modal */
+  .lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(43, 45, 66, 0.85);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .lightbox-content {
+    max-width: 85%;
+    max-height: 85vh;
+    border-radius: 16px;
+    border: 4px solid #ffffff;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 30px; right: 40px;
+    color: #fff; font-size: 3rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .lightbox-close:hover { color: var(--primary-light); }
+
+  /* Toast Notification */
+  .toast {
+    visibility: hidden;
+    position: fixed;
+    bottom: 30px; left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    color: var(--primary);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    z-index: 1000;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    opacity: 0;
+    border: 2px solid var(--primary-light);
+  }
+  .toast.show { visibility: visible; opacity: 1; transform: translateX(-50%) translateY(-5px); }
+
+  /* Cute Footer */
+  .footer-container {
+    background: #ffe5ec;
+    padding: 60px 20px 30px 20px;
+    color: #4a4e69;
+    text-align: center;
+    margin-top: 80px;
+    border-top: 4px dashed var(--primary-light);
+  }
+  .footer-title { font-size: 2rem; font-weight: 700; margin-bottom: 8px; color: #2b2d42; }
+  .footer-subtitle { font-size: 0.95rem; color: #6c757d; margin-bottom: 35px; font-weight: 300; }
+  .contact-grid { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; max-width: 900px; margin: 0 auto 35px auto; }
+  .contact-btn {
+    background: #ffffff;
+    border: 1px solid #ffccd5;
+    color: #4a4e69;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  }
+  .contact-btn:hover { background: var(--primary); border-color: var(--primary); color: #ffffff; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(255, 143, 171, 0.4); }
+  .contact-btn i { font-size: 1.1rem; color: var(--primary); }
+  .contact-btn:hover i { color: #ffffff; }
+  .footer-copy { font-size: 0.8rem; color: #8d99ae; margin: 0; border-top: 1px solid #ffccd5; padding-top: 25px; font-weight: 300; }
+
+  /* Responsive Design */
+  @media (max-width: 960px) {
+    .place-card, .place-card:nth-child(even) { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.3rem; }
+    .navbar a { margin: 0 6px; font-size: 0.85rem; padding: 5px 10px; }
+    .place-body { padding: 30px; }
+    .comments-section { padding: 15px 30px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-content">
+    <span class="hero-badge">✨ THE CUTE SURIN VIBES ✨</span>
+    <h1>เที่ยวสุรินทร์ฉบับน่ารักสุยอด!</h1>
+    <p>พาไปสัมผัสความน่ารักของน้องช้าง เมืองโบราณสุดคิ้วท์ และคาเฟ่วัฒนธรรมสุดอบอุ่นกันเถอะ 💖</p>
+  </div>
+</header>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <a href="webste.1.html"><i class="fas fa-home"></i> หน้าแรก</a>
+  <a href="teepak-1.html"><i class="fas fa-bed"></i> ที่พัก</a>
+  <a href="food-1.html"><i class="fas fa-utensils"></i> อาหาร</a>
+  <a href="travel-1.html"><i class="fas fa-map-marked-alt"></i> สถานที่ท่องเที่ยว</a>
+  <a href="contact-2.html"><i class="fas fa-address-book"></i> ติดต่อเรา</a>
+</nav>
+
+<div class="container">
+  <h2 class="section-heading"><i class="fas fa-heart" style="color: var(--primary);"></i> จุดเช็คอินสุดน่ารัก ห้ามพลาด</h2>
+
+  <!-- 1. ปราสาทศีขรภูมิ -->
+  <article class="place-card">
+    <div class="place-img-container" onclick="openLightbox(this)">
+      <div class="place-badge"><i class="fas fa-camera-retro"></i> สถาปัตยกรรมสุดคลาสสิก</div>
+      <img src="d:\อรปรียา นาคำสี\images.jpg" alt="ปราสาทศีขรภูมิ" class="place-img">
+    </div>
+    <div class="place-content-side">
+      <div class="place-body">
+        <h2 class="place-title">ปราสาทศีขรภูมิ</h2>
+        <p class="place-desc">โบราณสถานอายุพันปีที่เต็มไปด้วยความงามของงานแกะสลักหินทรายและนางอัปสรา แวะมาถ่ายรูปเก๋ๆ ฟีลวินเทจกันได้นะ!</p>
+        <div class="place-recommendation">
+          <strong>💡 ทริคเล็กๆ:</strong> มาช่วงเย็นแสงสวยละมุนมาก ถ่ายรูปออกมาปังสุดๆ ไปเลยค่า
+        </div>
+      </div>
+      <div class="interaction-bar">
+        <button class="action-btn" onclick="toggleLike(this, 'like-count-1')"><i class="far fa-heart"></i> ถูกใจ (<span id="like-count-1">320</span>)</button>
+        <button class="action-btn" onclick="focusComment('comment-input-1')"><i class="far fa-comment"></i> ความคิดเห็น</button>
+        <button class="action-btn" onclick="sharePost()"><i class="far fa-share-square"></i> แชร์</button>
+      </div>
+      <div class="comments-section">
+        <h4 class="comments-title"><i class="fas fa-comment-dots"></i> เม้าท์มอยความประทับใจ</h4>
+        <div class="comment-list" id="comment-list-1">
+          <div class="comment-item"><strong>คุณสมชาย:</strong> ภาพสลักสวยมาก บรรยากาศร่มรื่นดีครับ</div>
+        </div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" id="comment-input-1" placeholder="พิมพ์ความคิดเห็นน่ารักๆ...">
+          <button class="send-btn" onclick="addComment(1)">ส่ง</button>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 2. หมู่บ้านช้าง บ้านตากลาง -->
+  <article class="place-card">
+    <div class="place-img-container" onclick="openLightbox(this)">
+      <div class="place-badge"><i class="fas fa-paw"></i> แก๊งน้องช้างสุดน่ารัก</div>
+      <img src="d:\อรปรียา นาคำสี\32f9acf0-bb0b-11eb-8220-9f8ed436e416_original.jpg" alt="หมู่บ้านช้าง บ้านตากลาง" class="place-img">
+    </div>
+    <div class="place-content-side">
+      <div class="place-body">
+        <h2 class="place-title">หมู่บ้านช้าง บ้านตากลาง</h2>
+        <p class="place-desc">มาพบกับน้องช้างแสนรู้ตัวเป็นๆ ที่ใหญ่ที่สุดในโลก ณ ตำบลกระโพ ดินแดนแห่งความผูกพันสุดน่ารักระหว่างคนกับช้าง 🐘💕</p>
+        <div class="place-recommendation">
+          <strong>💡 ทริคเล็กๆ:</strong> แวะไปทักทายน้องช้างริมแม่น้ำมูลช่วงเช้า วิวดีและใจฟูมากกก
+        </div>
+      </div>
+      <div class="interaction-bar">
+        <button class="action-btn" onclick="toggleLike(this, 'like-count-2')"><i class="far fa-heart"></i> ถูกใจ (<span id="like-count-2">540</span>)</button>
+        <button class="action-btn" onclick="focusComment('comment-input-2')"><i class="far fa-comment"></i> ความคิดเห็น</button>
+        <button class="action-btn" onclick="sharePost()"><i class="far fa-share-square"></i> แชร์</button>
+      </div>
+      <div class="comments-section">
+        <h4 class="comments-title"><i class="fas fa-comment-dots"></i> เม้าท์มอยความประทับใจ</h4>
+        <div class="comment-list" id="comment-list-2">
+          <div class="comment-item"><strong>คุณพิมพ์ใจ:</strong> น้องช้างน่ารักและแสนรู้มากค่ะ รักเลย</div>
+        </div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" id="comment-input-2" placeholder="พิมพ์ความคิดเห็นน่ารักๆ...">
+          <button class="send-btn" onclick="addComment(2)">ส่ง</button>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 3. ปราสาทหินบ้านพลวง -->
+  <article class="place-card">
+    <div class="place-img-container" onclick="openLightbox(this)">
+      <div class="place-badge"><i class="fas fa-star"></i> หินทรายสีชมพูสุดคิ้วท์</div>
+      <img src="d:\อรปรียา นาคำสี\images (1).jpg" alt="ปราสาทหินบ้านพลวง" class="place-img">
+    </div>
+    <div class="place-content-side">
+      <div class="place-body">
+        <h2 class="place-title">ปราสาทหินบ้านพลวง</h2>
+        <p class="place-desc">ปราสาทหินทรายสีชมพูเข้มขนาดกะทัดรัด ลวดลายแกะสลักประณีตสวยงาม ยืนโพสท่าถ่ายรูปมุมไหนก็น่ารักโดนใจสายคาเฟ่</p>
+        <div class="place-recommendation">
+          <strong>💡 ทริคเล็กๆ:</strong> สายชอบถ่ายรูปแนวสตรีทอาร์ตโบราณต้องห้ามพลาดเด็ดขาด!
+        </div>
+      </div>
+      <div class="interaction-bar">
+        <button class="action-btn" onclick="toggleLike(this, 'like-count-3')"><i class="far fa-heart"></i> ถูกใจ (<span id="like-count-3">215</span>)</button>
+        <button class="action-btn" onclick="focusComment('comment-input-3')"><i class="far fa-comment"></i> ความคิดเห็น</button>
+        <button class="action-btn" onclick="sharePost()"><i class="far fa-share-square"></i> แชร์</button>
+      </div>
+      <div class="comments-section">
+        <h4 class="comments-title"><i class="fas fa-comment-dots"></i> เม้าท์มอยความประทับใจ</h4>
+        <div class="comment-list" id="comment-list-3">
+          <div class="comment-item"><strong>คุณวิชัย:</strong> หินสีชมพูแปลกตา ลวดลายคมชัดมากครับ</div>
+        </div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" id="comment-input-3" placeholder="พิมพ์ความคิดเห็นน่ารักๆ...">
+          <button class="send-btn" onclick="addComment(3)">ส่ง</button>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 4. หมู่บ้านผ้าไหมบ้านท่าสว่าง -->
+  <article class="place-card">
+    <div class="place-img-container" onclick="openLightbox(this)">
+      <div class="place-badge"><i class="fas fa-gift"></i> ผ้าไหมงานฝีมือสุดประณีต</div>
+      <img src="d:\อรปรียา นาคำสี\images (2).jpg" alt="ผ้าไหมบ้านท่าสว่าง" class="place-img">
+    </div>
+    <div class="place-content-side">
+      <div class="place-body">
+        <h2 class="place-title">หมู่บ้านผ้าไหมบ้านท่าสว่าง</h2>
+        <p class="place-desc">แหล่งทอผ้ายกทองโบราณอันเลื่องชื่อ ชมผลงานศิลปะบนผืนผ้าที่รังสรรค์ด้วยความตั้งใจและอ่อนช้อยจากภูมิปัญญาชาวบ้าน</p>
+        <div class="place-recommendation">
+          <strong>💡 ทริคเล็กๆ:</strong> แวะชมขั้นตอนการทอผ้าสุดอลังการและอุดหนุนผ้าไหมสวยๆ เป็นของฝากกันได้จ้า
+        </div>
+      </div>
+      <div class="interaction-bar">
+        <button class="action-btn" onclick="toggleLike(this, 'like-count-4')"><i class="far fa-heart"></i> ถูกใจ (<span id="like-count-4">410</span>)</button>
+        <button class="action-btn" onclick="focusComment('comment-input-4')"><i class="far fa-comment"></i> ความคิดเห็น</button>
+        <button class="action-btn" onclick="sharePost()"><i class="far fa-share-square"></i> แชร์</button>
+      </div>
+      <div class="comments-section">
+        <h4 class="comments-title"><i class="fas fa-comment-dots"></i> เม้าท์มอยความประทับใจ</h4>
+        <div class="comment-list" id="comment-list-4">
+          <div class="comment-item"><strong>คุณกชพร:</strong> ผืนผ้าไหมสวยงามอลังการมากค่ะ ประทับใจสุดๆ</div>
+        </div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" id="comment-input-4" placeholder="พิมพ์ความคิดเห็นน่ารักๆ...">
+          <button class="send-btn" onclick="addComment(4)">ส่ง</button>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+<!-- Lightbox Modal -->
+<div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightboxImg">
+</div>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast"><i class="fas fa-heart" style="color: var(--primary); margin-right: 6px;"></i> คัดลอกลิงก์สำเร็จแล้วจ้า!</div>
+
+<footer class="footer-container">
+  <div class="footer-title">ติดต่อเรา 💌</div>
+  <div class="footer-subtitle">ทักมาพูดคุยหรือสอบถามข้อมูลเที่ยวสุรินทร์ได้เสมอนะคะ</div>
+  
+  <div class="contact-grid">
+    <a href="tel:0982059162" class="contact-btn"><i class="fas fa-phone-alt"></i><span>098-205-9162</span></a>
+    <a href="https://www.instagram.com/kwa.exe__" target="_blank" class="contact-btn"><i class="fab fa-instagram"></i><span>kwa.exe__</span></a>
+    <a href="https://www.facebook.com/" target="_blank" class="contact-btn"><i class="fab fa-facebook"></i><span>Zee Opy</span></a>
+    <a href="https://line.me/ti/p/~@kumi.ko721" target="_blank" class="contact-btn"><i class="fab fa-line"></i><span>@kumi.ko721</span></a>
+  </div>
+
+  <p class="footer-copy">&copy; 2026 เว็บไซต์ท่องเที่ยวจังหวัดสุรินทร์. All Rights Reserved. 💖</p>
+</footer>
+
+<script>
+  function openLightbox(container) {
+    const img = container.querySelector('img');
+    const modal = document.getElementById('lightboxModal');
+    const modalImg = document.getElementById('lightboxImg');
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightboxModal').style.display = "none";
+  }
+
+  function toggleLike(btn, countId) {
+    const icon = btn.querySelector('i');
+    const countSpan = document.getElementById(countId);
+    let count = parseInt(countSpan.innerText);
+
+    if (btn.classList.contains('liked')) {
+      btn.classList.remove('liked');
+      icon.classList.remove('fas');
+      icon.classList.add('far');
+      countSpan.innerText = count - 1;
+    } else {
+      btn.classList.add('liked');
+      icon.classList.remove('far');
+      icon.classList.add('fas');
+      countSpan.innerText = count + 1;
+    }
+  }
+
+  function focusComment(inputId) {
+    document.getElementById(inputId).focus();
+  }
+
+  function addComment(placeId) {
+    const input = document.getElementById(`comment-input-${placeId}`);
+    const commentText = input.value.trim();
+    if (commentText === "") return;
+
+    const commentList = document.getElementById(`comment-list-${placeId}`);
+    const newComment = document.createElement('div');
+    newComment.className = 'comment-item';
+    newComment.innerHTML = `<strong>นักท่องเที่ยว:</strong> ${escapeHtml(commentText)}`;
+    
+    commentList.appendChild(newComment);
+    commentList.scrollTop = commentList.scrollHeight;
+    input.value = "";
+  }
+
+  function escapeHtml(text) {
+    const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+  }
+
+  function sharePost() {
+    const toast = document.getElementById('toast');
+    toast.className = "toast show";
+    setTimeout(function() {
+      toast.className = "toast";
+    }, 2500);
+  }
+</script>
+
+</body>
+</html>

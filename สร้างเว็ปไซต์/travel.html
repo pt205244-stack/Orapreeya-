@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ท่องเที่ยวสุรินทร์ - มหัศจรรย์แดนช้างและอารยธรรมขอมโบราณ</title>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+  :root { 
+    --primary: #0a0e0d;         /* ดำรัตติกาล */
+    --primary-light: #131b18;   
+    --surface: #101714;         /* ดำอมเขียวเข้มแบบป่าโบราณ */
+    --accent: #f3c653;          /* ทองคำโบราณ ทรงพลัง */
+    --accent-hover: #ffd76a;
+    --bg-main: #060908;         /* พื้นหลังดำสนิท */
+    --card-bg: #101714;
+    --text-main: #f1f5f3;
+    --text-muted: #94a3b8;
+    --border-color: rgba(243, 198, 83, 0.2);
+    --shadow-glow: 0 0 30px rgba(243, 198, 83, 0.08);
+    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(243, 198, 83, 0.2);
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  * { box-sizing: border-box; }
+
+  body { 
+    font-family: 'Prompt', sans-serif; 
+    background-color: var(--bg-main); 
+    color: var(--text-main); 
+    margin: 0; 
+    line-height: 1.8; 
+  }
+
+  /* Stunning Dark Hero Section */
+  .hero { 
+    height: 75vh; 
+    background: linear-gradient(to bottom, rgba(6,9,8,0.4), rgba(6,9,8,0.95)), 
+                url('https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    border-bottom: 3px solid var(--accent);
+  }
+  .hero-content { max-width: 900px; z-index: 2; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(243, 198, 83, 0.1);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 6px 22px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(243, 198, 83, 0.15);
+  }
+  .hero h1 { 
+    font-size: 4rem; 
+    margin: 0 0 15px 0; 
+    font-weight: 700; 
+    letter-spacing: -1px;
+    color: #ffffff;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  }
+  .hero p { 
+    font-size: 1.2rem; 
+    color: #cbd5e1; 
+    font-weight: 300; 
+    margin: 0 auto;
+    max-width: 700px;
+  }
+
+  /* Dark Sticky Navbar */
+  .navbar {
+    background: rgba(10, 14, 13, 0.92);
+    backdrop-filter: blur(12px);
+    padding: 16px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(243, 198, 83, 0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  .navbar a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    position: relative;
+  }
+  .navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: var(--accent);
+    transition: var(--transition);
+  }
+  .navbar a:hover { color: var(--accent); }
+  .navbar a:hover::after { width: 100%; }
+  .navbar a i { color: var(--accent); margin-right: 8px; }
+
+  /* Main Container */
+  .container { max-width: 1200px; margin: 90px auto; padding: 0 25px; }
+  
+  .section-heading {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    letter-spacing: -0.5px;
+  }
+  .section-heading::after {
+    content: '';
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+    border-radius: 2px;
+  }
+  .section-heading i { color: var(--accent); font-size: 2.2rem; }
+
+  /* Dark Luxury Place Card */
+  .place-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    margin-bottom: 70px;
+    overflow: hidden;
+    box-shadow: var(--shadow-glow);
+    transition: var(--transition);
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    border: 1px solid var(--border-color);
+  }
+  .place-card:hover { 
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-6px);
+    border-color: var(--accent);
+  }
+  .place-card:nth-child(even) { grid-template-columns: 1fr 1.1fr; }
+  .place-card:nth-child(even) .place-img-container { order: 2; }
+  .place-card:nth-child(even) .place-content-side { order: 1; }
+
+  .place-img-container {
+    width: 100%;
+    height: 100%;
+    min-height: 460px;
+    overflow: hidden;
+    background: #000;
+    cursor: pointer;
+    position: relative;
+  }
+  .place-badge {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: rgba(10, 14, 13, 0.85);
+    backdrop-filter: blur(10px);
+    color: var(--accent);
+    padding: 8px 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    z-index: 10;
+    border: 1px solid rgba(243, 198, 83, 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  }
+  .place-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9) contrast(1.1);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+  }
+  .place-img-container:hover .place-img { 
+    transform: scale(1.06); 
+    filter: brightness(1) contrast(1.15);
+  }
+
+  .place-content-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--surface);
+  }
+
+  .place-body { padding: 45px; }
+  .place-title { 
+    color: #ffffff; 
+    font-size: 2.2rem; 
+    margin: 0 0 16px 0; 
+    font-weight: 700; 
+    letter-spacing: -0.5px;
+  }
+  .place-desc { color: var(--text-muted); font-size: 1.02rem; margin-bottom: 25px; font-weight: 300; }
+  
+  .place-recommendation {
+    background: rgba(243, 198, 83, 0.04);
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.93rem;
+    color: #cbd5e1;
+    border-top: 1px solid rgba(243, 198, 83, 0.1);
+    border-right: 1px solid rgba(243, 198, 83, 0.1);
+    border-bottom: 1px solid rgba(243, 198, 83, 0.1);
+  }
+  .place-recommendation strong { color: var(--accent); }
+
+  /* Interaction Bar */
+  .interaction-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .action-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-family: 'Prompt', sans-serif;
+  }
+  .action-btn:hover { 
+    background: rgba(243, 198, 83, 0.1); 
+    color: var(--accent); 
+  }
+  .action-btn.liked { color: #f43f5e; }
+
+  /* Comments Section */
+  .comments-section {
+    padding: 25px 45px;
+    background: rgba(0, 0, 0, 0.35);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .comments-title {
+    font-size: 0.93rem;
+    color: var(--accent);
+    margin: 0 0 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+  }
+  .comment-list {
+    margin-bottom: 15px;
+    max-height: 150px;
+    overflow-y: auto;
+    padding-right: 5px;
+  }
+  .comment-list::-webkit-scrollbar { width: 4px; }
+  .comment-list::-webkit-scrollbar-thumb { background: rgba(243, 198, 83, 0.3); border-radius: 4px; }
+
+  .comment-item {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+  }
+  .comment-item strong { color: var(--accent); margin-right: 8px; }
+
+  .comment-form { display: flex; gap: 10px; }
+  .comment-input {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 18px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Prompt', sans-serif;
+    font-size: 0.93rem;
+    outline: none;
+    transition: var(--transition);
+  }
+  .comment-input:focus { border-color: var(--accent); box-shadow: 0 0 10px rgba(243, 198, 83, 0.2); }
+  
+  .send-btn {
+    background: var(--accent);
+    color: #0a0e0d;
+    border: none;
+    padding: 0 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Prompt', sans-serif;
+    transition: var(--transition);
+  }
+  .send-btn:hover { background: var(--accent-hover); box-shadow: 0 0 15px rgba(243, 198, 83, 0.4); }
+
+  /* Lightbox Modal */
+  .lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(6, 9, 8, 0.95);
+    backdrop-filter: blur(10px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .lightbox-content {
+    max-width: 85%;
+    max-height: 85vh;
+    border-radius: 8px;
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 50px rgba(243, 198, 83, 0.2);
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 30px; right: 40px;
+    color: #fff; font-size: 3rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .lightbox-close:hover { color: var(--accent); }
+
+  /* Toast Notification */
+  .toast {
+    visibility: hidden;
+    position: fixed;
+    bottom: 30px; left: 50%;
+    transform: translateX(-50%);
+    background: #101714;
+    color: var(--accent);
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    border: 1px solid var(--accent);
+  }
+  .toast.show { visibility: visible; opacity: 1; transform: translateX(-50%) translateY(-5px); }
+
+  /* Dark Luxury Footer */
+  .footer-container {
+    background: #040605;
+    padding: 80px 20px 40px 20px;
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+    border-top: 3px solid var(--accent);
+  }
+  .footer-title { font-size: 2.2rem; font-weight: 700; margin-bottom: 10px; color: #ffffff; letter-spacing: -0.5px; }
+  .footer-subtitle { font-size: 1rem; color: var(--text-muted); margin-bottom: 45px; font-weight: 300; }
+  .contact-grid { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; max-width: 950px; margin: 0 auto 45px auto; }
+  .contact-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #cbd5e1;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    transition: var(--transition);
+  }
+  .contact-btn:hover { background: var(--accent); border-color: var(--accent); color: #0a0e0d; transform: translateY(-3px); box-shadow: 0 0 20px rgba(243, 198, 83, 0.4); }
+  .contact-btn i { font-size: 1.2rem; color: var(--accent); }
+  .contact-btn:hover i { color: #0a0e0d; }
+  .footer-copy { font-size: 0.85rem; color: #64748b; margin: 0; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; font-weight: 300; }
+
+  /* Responsive Design */
+  @media (max-width: 960px) {
+    .place-card, .place-card:nth-child(even) { grid-template-columns: 1fr; }
+    .place-card:nth-child(even) .place-img-container { order: 1; }
+    .place-card:nth-child(even) .place-content-side { order: 2; }
+    .hero h1 { font-size: 2.6rem; }
+    .navbar a { margin: 0 10px; font-size: 0.9rem; }
+    .place-body { padding: 30px; }
+    .comments-section { padding: 20px 30px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-content">
+    <span class="hero-badge">THE ANCIENT REALM</span>
+    <h1>มหัศจรรย์เมืองสุรินทร์</h1>
+    <p>ดำดิ่งสู่อารยธรรมขอมโบราณพันปี และดินแดนแห่งพญาคชสารอันทรงเกียรติ</p>
+  </div>
+</header>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <a href="webste.1.html"><i class="fas fa-home"></i> หน้าแรก</a>
+  <a href="teepak.html"><i class="fas fa-bed"></i> ที่พัก</a>
+  <a href="food.html"><i class="fas fa-utensils"></i> อาหาร</a>
+  <a href="travel.html"><i class="fas fa-map-marked-alt"></i> สถานที่ท่องเที่ยว</a>
+  <a href="contact.html"><i class="fas fa-address-book"></i> ติดต่อเรา</a>
+</nav>
+
+<div class="container">
+  <h2 class="section-heading"><i class="fas fa-landmark"></i> ดินแดนศักดิ์ศรีและตำนาน</h2>
+
+  <!-- 1. ปราสาทศีขรภูมิ -->
+  <article class="place-card">
+    <div class="place-img-container" onclick="openLightbox(this)">
+      <div class="place-badge"><i class="fas fa-crown"></i> สถาปัตยกรรมขอมโบราณ</div>
+      <img src="d:\อรปรียา นาคำสี\images.jpg" alt="ปราสาทศีขรภูมิ" class="place-img">
+    </div>
+    <div class="place-content-side">
+      <div class="place-body">
+        <h2 class="place-title">ปราสาทศีขรภูมิ</h2>
+        <p class="place-desc">โบราณสถานอันทรงคุณค่าอายุกว่าพันปี โดดเด่นด้วยงานแกะสลักหินทรายและภาพสลักนางอัปสราอันวิจิตรตระการตา ลึกลับและน่าเกรงขาม</p>
+        <div class="place-recommendation">
+          <strong>⚡ คำแนะนำ:</strong> แนะนำให้สัมผัสมิติช่วงแสงเย็น เงาของหินทรายโบราณจะขับความขลังออกมาอย่างเต็มเปี่ยม
+        </div>
+      </div>
+      <div class="interaction-bar">
+        <button class="action-btn" onclick="toggleLike(this, 'like-count-1')"><i class="far fa-heart"></i> ถูกใจ (<span id="like-count-1">320</span>)</button>
+        <button class="action-btn" onclick="focusComment('comment-input-1')"><i class="far fa-comment"></i> ความคิดเห็น</button>
+        <button class="action-btn" onclick="sharePost()"><i class="far fa-share-square"></i> แชร์</button>
+      </div>
+      <div class="comments-section">
+        <h4 class="comments-title"><i class="fas fa-comments"></i> บันทึกความประทับใจ</h4>
+        <div class="comment-list" id="comment-list-1">
+          <div class="comment-item"><strong>คุณสมชาย:</strong> ภาพสลักนางอัปสราสวยงามคมชัดมากครับ บรรยากาศขลังสุดๆ</div>
+        </div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" id="comment-input-1" placeholder="แสดงความคิดเห็นของคุณ...">
+          <button class="send-btn" onclick="addComment(1)">ส่ง</button>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 2. หมู่บ้านช้าง บ้านตากลาง -->
+  <article class="place-card">
+    <div class="place-img-container" onclick="openLightbox(this)">
+      <div class="place-badge"><i class="fas fa-shield-alt"></i> วิถีชีวิตและวัฒนธรรม</div>
+      <img src="d:\อรปรียา นาคำสี\32f9acf0-bb0b-11eb-8220-9f8ed436e416_original.jpg" alt="หมู่บ้านช้าง บ้านตากลาง" class="place-img">
+    </div>
+    <div class="place-content-side">
+      <div class="place-body">
+        <h2 class="place-title">หมู่บ้านช้าง บ้านตากลาง</h2>
+        <p class="place-desc">อาณาจักรช้างบ้านที่ใหญ่ที่สุดในโลก ณ ตำบลกระโพ ดินแดนที่มนุษย์และพญาคชสารผูกพันกันดั่งสายเลือด พร้อมเรียนรู้ศาสตร์โบราณชาวกูย</p>
+        <div class="place-recommendation">
+          <strong>⚡ คำแนะนำ:</strong> ร่วมชมวิถีอันทรงพลังยามเช้าริมแม่น้ำมูล ภาพความผูกพันที่หาชมได้ยากยิ่ง
+        </div>
+      </div>
+      <div class="interaction-bar">
+        <button class="action-btn" onclick="toggleLike(this, 'like-count-2')"><i class="far fa-heart"></i> ถูกใจ (<span id="like-count-2">540</span>)</button>
+        <button class="action-btn" onclick="focusComment('comment-input-2')"><i class="far fa-comment"></i> ความคิดเห็น</button>
+        <button class="action-btn" onclick="sharePost()"><i class="far fa-share-square"></i> แชร์</button>
+      </div>
+      <div class="comments-section">
+        <h4 class="comments-title"><i class="fas fa-comments"></i> บันทึกความประทับใจ</h4>
+        <div class="comment-list" id="comment-list-2">
+          <div class="comment-item"><strong>คุณพิมพ์ใจ:</strong> ช้างน่ารักและแสนรู้มากค่ะ บรรยากาศยิ่งใหญ่ตระการตามาก</div>
+        </div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" id="comment-input-2" placeholder="แสดงความคิดเห็นของคุณ...">
+          <button class="send-btn" onclick="addComment(2)">ส่ง</button>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 3. ปราสาทหินบ้านพลวง -->
+  <article class="place-card">
+    <div class="place-img-container" onclick="openLightbox(this)">
+      <div class="place-badge"><i class="fas fa-gem"></i> ศิลปะบาปวน</div>
+      <img src="d:\อรปรียา นาคำสี\images (1).jpg" alt="ปราสาทหินบ้านพลวง" class="place-img">
+    </div>
+    <div class="place-content-side">
+      <div class="place-body">
+        <h2 class="place-title">ปราสาทหินบ้านพลวง</h2>
+        <p class="place-desc">ศาสนสถานหินทรายสีชมพูเข้มขลัง ขนาดกะทัดรัดแต่เปี่ยมด้วยดีเทลอันดุดัน ลวดลายหน้าบันบอกเล่าเรื่องราวเทพปกรณัมโบราณ</p>
+        <div class="place-recommendation">
+          <strong>⚡ คำแนะนำ:</strong> โลเคชั่นลับสำหรับสายประวัติศาสตร์และผู้ที่หลงใหลงานศิลปะขอมแท้ดั้งเดิม
+        </div>
+      </div>
+      <div class="interaction-bar">
+        <button class="action-btn" onclick="toggleLike(this, 'like-count-3')"><i class="far fa-heart"></i> ถูกใจ (<span id="like-count-3">215</span>)</button>
+        <button class="action-btn" onclick="focusComment('comment-input-3')"><i class="far fa-comment"></i> ความคิดเห็น</button>
+        <button class="action-btn" onclick="sharePost()"><i class="far fa-share-square"></i> แชร์</button>
+      </div>
+      <div class="comments-section">
+        <h4 class="comments-title"><i class="fas fa-comments"></i> บันทึกความประทับใจ</h4>
+        <div class="comment-list" id="comment-list-3">
+          <div class="comment-item"><strong>คุณวิชัย:</strong> หินทรายสีชมพูเข้ม ลวดลายคมชัดดุดันมากครับ</div>
+        </div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" id="comment-input-3" placeholder="แสดงความคิดเห็นของคุณ...">
+          <button class="send-btn" onclick="addComment(3)">ส่ง</button>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 4. หมู่บ้านผ้าไหมบ้านท่าสว่าง -->
+  <article class="place-card">
+    <div class="place-img-container" onclick="openLightbox(this)">
+      <div class="place-badge"><i class="fas fa-fire"></i> หัตถกรรมระดับตำนาน</div>
+      <img src="d:\อรปรียา นาคำสี\images (2).jpg" alt="ผ้าไหมบ้านท่าสว่าง" class="place-img">
+    </div>
+    <div class="place-content-side">
+      <div class="place-body">
+        <h2 class="place-title">หมู่บ้านผ้าไหมบ้านท่าสว่าง</h2>
+        <p class="place-desc">แหล่งกำเนิดผ้ายกทองโบราณสำหรับราชสำนัก กลุ่มจันทร์โสมาผู้สืบสานลวดลายอลังการด้วยเทคนิคกี่ทอจักรกลโบราณขั้นสูงสุด</p>
+        <div class="place-recommendation">
+          <strong>⚡ คำแนะนำ:</strong> ชมความอัศจรรย์เบื้องหลังผืนผ้าไหมหลักแสนที่ใช้ฝีมือมนุษย์นับสิบชีวิตรังสรรค์ขึ้น
+        </div>
+      </div>
+      <div class="interaction-bar">
+        <button class="action-btn" onclick="toggleLike(this, 'like-count-4')"><i class="far fa-heart"></i> ถูกใจ (<span id="like-count-4">410</span>)</button>
+        <button class="action-btn" onclick="focusComment('comment-input-4')"><i class="far fa-comment"></i> ความคิดเห็น</button>
+        <button class="action-btn" onclick="sharePost()"><i class="far fa-share-square"></i> แชร์</button>
+      </div>
+      <div class="comments-section">
+        <h4 class="comments-title"><i class="fas fa-comments"></i> บันทึกความประทับใจ</h4>
+        <div class="comment-list" id="comment-list-4">
+          <div class="comment-item"><strong>คุณกชพร:</strong> ผืนผ้าไหมมีความประณีตและอลังการมากๆ ครับ สมคำร่ำลือ</div>
+        </div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" id="comment-input-4" placeholder="แสดงความคิดเห็นของคุณ...">
+          <button class="send-btn" onclick="addComment(4)">ส่ง</button>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+<!-- Lightbox Modal -->
+<div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightboxImg">
+</div>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 8px;"></i> คัดลอกลิงก์สำเร็จแล้ว</div>
+
+<footer class="footer-container">
+  <div class="footer-title">ติดต่อเรา</div>
+  <div class="footer-subtitle">ช่องทางการเชื่อมต่อเพื่อเจาะลึกอาณาจักรสุรินทร์</div>
+  
+  <div class="contact-grid">
+    <a href="tel:0982059162" class="contact-btn"><i class="fas fa-phone-alt"></i><span>098-205-9162</span></a>
+    <a href="https://www.instagram.com/kwa.exe__" target="_blank" class="contact-btn"><i class="fab fa-instagram"></i><span>kwa.exe__</span></a>
+    <a href="https://www.facebook.com/" target="_blank" class="contact-btn"><i class="fab fa-facebook"></i><span>Zee Opy</span></a>
+    <a href="https://line.me/ti/p/~@kumi.ko721" target="_blank" class="contact-btn"><i class="fab fa-line"></i><span>@kumi.ko721</span></a>
+  </div>
+
+  <p class="footer-copy">&copy; 2026 เว็บไซต์ท่องเที่ยวจังหวัดสุรินทร์. All Rights Reserved.</p>
+</footer>
+
+<script>
+  function openLightbox(container) {
+    const img = container.querySelector('img');
+    const modal = document.getElementById('lightboxModal');
+    const modalImg = document.getElementById('lightboxImg');
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightboxModal').style.display = "none";
+  }
+
+  function toggleLike(btn, countId) {
+    const icon = btn.querySelector('i');
+    const countSpan = document.getElementById(countId);
+    let count = parseInt(countSpan.innerText);
+
+    if (btn.classList.contains('liked')) {
+      btn.classList.remove('liked');
+      icon.classList.remove('fas');
+      icon.classList.add('far');
+      countSpan.innerText = count - 1;
+    } else {
+      btn.classList.add('liked');
+      icon.classList.remove('far');
+      icon.classList.add('fas');
+      countSpan.innerText = count + 1;
+    }
+  }
+
+  function focusComment(inputId) {
+    document.getElementById(inputId).focus();
+  }
+
+  function addComment(placeId) {
+    const input = document.getElementById(`comment-input-${placeId}`);
+    const commentText = input.value.trim();
+    if (commentText === "") return;
+
+    const commentList = document.getElementById(`comment-list-${placeId}`);
+    const newComment = document.createElement('div');
+    newComment.className = 'comment-item';
+    newComment.innerHTML = `<strong>ผู้ใช้งาน:</strong> ${escapeHtml(commentText)}`;
+    
+    commentList.appendChild(newComment);
+    commentList.scrollTop = commentList.scrollHeight;
+    input.value = "";
+  }
+
+  function escapeHtml(text) {
+    const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+  }
+
+  function sharePost() {
+    const toast = document.getElementById('toast');
+    toast.className = "toast show";
+    setTimeout(function() {
+      toast.className = "toast";
+    }, 2500);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="guHKkH1p2hCGxEoq-k4a">
+    <mxGraphModel dx="693" dy="832" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="agTvmpCBmGJI06Nz2wmR-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="751" width="894" x="112" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="agTvmpCBmGJI06Nz2wmR-2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="&#xa;&lt;span style=&quot;font-size:20.0pt;line-height:107%;&#xa;font-family:&amp;quot;BrowalliaUPC&amp;quot;,sans-serif;mso-fareast-font-family:Calibri;&#xa;mso-fareast-theme-font:minor-latin;color:black;mso-ansi-language:EN-US;&#xa;mso-fareast-language:EN-US;mso-bidi-language:TH&quot;&gt;Librarian&lt;/span&gt;&#xa;&#xa;&#xa;&#xa;" vertex="1">
+          <mxGeometry height="111" width="58" x="11" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="agTvmpCBmGJI06Nz2wmR-4" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="&#xa;Member&#xa;&#xa;" vertex="1">
+          <mxGeometry height="101" width="58" x="11" y="564" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

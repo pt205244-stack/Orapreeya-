@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ติดต่อเรา - มหัศจรรย์เมืองสุรินทร์</title>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+  :root { 
+    --primary-color: #d47a8c;     /* สีชมพูกุหลาบละมุน */
+    --primary-light: #fbe6eb;     /* สีชมพูพาสเทลอ่อน */
+    --accent-color: #ffb7b2;      /* สีพีชน่ารักๆ */
+    --bg-light: #fff9f9;          /* พื้นหลังสีครีมอมชมพูจางๆ */
+    --bg-card: #FFFFFF;
+    --text-main: #5c4033;         /* สีน้ำตาลเข้มตุ๊กตา (อ่านง่ายและอบอุ่น) */
+    --text-muted: #8c7365;        /* สีน้ำตาลอ่อน */
+    --border-color: #ffd1dc;      /* ขอบสีชมพูพาสเทล */
+    --shadow-soft: 0 12px 30px rgba(212, 122, 140, 0.12);
+    --shadow-hover: 0 18px 40px rgba(212, 122, 140, 0.22);
+    --transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); /* เอฟเฟกต์เด้งดึ๋งแบบน่ารัก */
+  }
+  
+  * { box-sizing: border-box; }
+
+  body { 
+    font-family: 'Prompt', sans-serif; 
+    background-color: var(--bg-light); 
+    color: var(--text-main); 
+    margin: 0; 
+    line-height: 1.8; 
+    background-image: radial-gradient(circle at 10% 20%, rgba(255, 183, 178, 0.25) 0%, transparent 40%),
+                      radial-gradient(circle at 90% 80%, rgba(251, 230, 235, 0.5) 0%, transparent 40%);
+  }
+
+  /* Navigation Bar สไตล์คิวท์ๆ */
+  .navbar {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 16px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px dashed var(--border-color);
+    box-shadow: 0 4px 20px rgba(212, 122, 140, 0.08);
+  }
+
+  .navbar a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin: 0 18px;
+    font-weight: 500;
+    font-size: 0.98rem;
+    transition: var(--transition);
+    position: relative;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .navbar a:hover, .navbar a.active {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    font-weight: 600;
+    transform: translateY(-2px);
+  }
+
+  .navbar a i { color: var(--primary-color); }
+
+  /* Main Container */
+  .container { 
+    max-width: 850px; 
+    margin: 50px auto; 
+    padding: 0 25px; 
+  }
+
+  /* Section Header */
+  .page-header {
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  .page-header h1 {
+    color: var(--primary-color);
+    font-size: 2.4rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-shadow: 2px 2px 0px var(--primary-light);
+  }
+
+  .page-header p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  /* Creator Card สไตล์กล่องของขวัญ/ตุ๊กตา */
+  .creator-card {
+    background: var(--bg-card);
+    border-radius: 30px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 45px;
+    border: 3px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+  }
+
+  .creator-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .creator-avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-light);
+    box-shadow: 0 8px 20px rgba(212, 122, 140, 0.2);
+    flex-shrink: 0;
+  }
+
+  .creator-info h3 {
+    margin: 0 0 4px 0;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .creator-info .role {
+    display: inline-block;
+    background: var(--primary-light);
+    color: var(--primary-color);
+    padding: 4px 14px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .creator-info p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* Contact Grid หัวข้อและปุ่ม */
+  .contact-section-title {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .contact-btn {
+    background: var(--bg-card);
+    padding: 18px 22px;
+    border-radius: 22px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .contact-btn:hover {
+    border-color: var(--primary-color);
+    background-color: var(--primary-light);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+    color: var(--primary-color);
+  }
+
+  .contact-btn .icon-box {
+    width: 48px;
+    height: 48px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(212, 122, 140, 0.15);
+  }
+
+  .contact-btn:hover .icon-box {
+    background: var(--primary-color);
+    color: #ffffff;
+    transform: rotate(10deg);
+  }
+
+  /* Footer น่ารักๆ */
+  .footer-container {
+    background: #ffedf0;
+    padding: 35px 20px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 70px;
+    border-top: 2px dashed var(--border-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .creator-card {
+      flex-direction: column;
+      text-align: center;
+    }
+    .navbar a { margin: 4px 8px; font-size: 0.9rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <a href="webste.1.html"><i class="fas fa-home"></i> หน้าแรก</a>
+  <a href="teepak.html"><i class="fas fa-bed"></i> ที่พัก</a>
+  <a href="food.html"><i class="fas fa-utensils"></i> อาหาร</a>
+  <a href="travel.html"><i class="fas fa-map-marked-alt"></i> สถานที่ท่องเที่ยว</a>
+  <a href="contact.html"><i class="fas fa-address-book"></i> ติดต่อเรา</a>
+</nav>
+<div class="container">
+
+  <!-- Header -->
+  <div class="page-header">
+    <h1>🎀 ติดต่อเรา 🎀</h1>
+    <p>สอบถามข้อมูลท่องเที่ยว หรือทักทายพูดคุยกับพวกเราได้เลยน้า</p>
+  </div>
+
+  <!-- Creator Section -->
+  <div class="creator-card">
+    <img src="d:\อรปรียา นาคำสี\765198179_947250554440282_1041620274732947072_n.jpg" alt="Creator Avatar" class="creator-avatar">
+    <div class="creator-info">
+      <h3>นางสาวอรปรียา นาคำสี</h3>
+      <span class="role">🐰 นักศึกษาวิทยาลัยเทคนิคปากช่อง (ปวช.1/1 IT)</span>
+      <p>ผู้จัดทำเว็บไซต์ท่องเที่ยวจังหวัดสุรินทร์ ตั้งใจทำสุดฝีมือเพื่อให้ทุกคนได้ชมความงามและวัฒนธรรมของเมืองสุรินทร์ ฝากเนื้อฝากตัวด้วยนะคะ! ✨</p>
+    </div>
+  </div>
+
+  <!-- Contact Grid -->
+  <h2 class="contact-section-title"><i class="fas fa-heart" style="color: var(--primary-color);"></i> ช่องทางติดต่อโดยตรง</h2>
+  <div class="contact-grid">
+    <a href="tel:0982059162" class="contact-btn">
+      <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+      <span>098-205-9162</span>
+    </a>
+    
+    <a href="https://www.instagram.com/kwa.exe__" target="_blank" class="contact-btn">
+      <div class="icon-box"><i class="fab fa-instagram"></i></div>
+      <span>kwa.exe__</span>
+    </a>
+    
+    <a href="https://www.facebook.com/" target="_blank" class="contact-btn">
+      <div class="icon-box"><i class="fab fa-facebook-f"></i></div>
+      <span>Zee Opy</span>
+    </a>
+    
+    <a href="https://line.me/ti/p/~@kumi.ko721" target="_blank" class="contact-btn">
+      <div class="icon-box"><i class="fab fa-line"></i></div>
+      <span>@kumi.ko721</span>
+    </a>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer-container">
+  <p>&copy; 2026 เว็บไซต์ท่องเที่ยวจังหวัดสุรินทร์. Made with 💖 by Orapriya.</p>
+</footer>
+
+</body>
+</html>
